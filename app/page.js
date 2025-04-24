@@ -8,6 +8,7 @@ import WhyChooseUs from "@/src/components/WhyChooseUs";
 import SignageSolutions from "@/src/components/SignageSolutions";
 import Testimonials from "@/src/components/Testimonials";
 import OurServices from "@/src/components/OurServices";
+import ContactUs from "@/src/components/ContactUs";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
       <OurServices />
       <FeaturedWork />
       <WhyChooseUs />
+      <Testimonials />
+      <ContactUs />
       {/*<SignageSolutions /> */}
-      {/* <Testimonials /> */}
     </>
   );
 }
