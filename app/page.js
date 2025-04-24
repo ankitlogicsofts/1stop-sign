@@ -11,6 +11,7 @@ import SignageSolutions from "@/src/components/SignageSolutions";
 import Testimonials from "@/src/components/Testimonials";
 import OurServices from "@/src/components/OurServices";
 import { HomePage } from "../lib/api/api";
+import ContactUs from "@/src/components/ContactUs";
 
 export default function Home() {
 
@@ -38,8 +39,9 @@ export default function Home() {
       <OurServices />
       <FeaturedWork />
       <WhyChooseUs />
+      <Testimonials />
+      <ContactUs />
       {/*<SignageSolutions /> */}
-      {/* <Testimonials /> */}
     </>
   );
 }
