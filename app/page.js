@@ -14,7 +14,6 @@ import { HomePage } from "../lib/api/api";
 import ContactUs from "@/src/components/ContactUs";
 
 export default function Home() {
-
   const [heroSection, setHeroSection] = useState(null);
   const [trustExperience, setTrustExperience] = useState(null);
   useEffect(() => {
@@ -41,7 +40,7 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <ContactUs />
-      {/*<SignageSolutions /> */}
+      <SignageSolutions />
     </>
   );
 }
