@@ -34,7 +34,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <HeroSection heroSection={heroSection} />
+      <HeroSection />
       <TrustValueProps trustExperience={trustExperience} />
       <OurServices />
       <FeaturedWork />

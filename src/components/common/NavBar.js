@@ -47,77 +47,77 @@ const Navbar = ({ setIsOpen }) => {
       <Toolbar className="navBar" component={motion.div} {...animationProps}>
         {isLoading
           ? Array.from({ length: 7 }).map((_, index) => (
-              <Box className="menu-item" key={index}>
-                <Skeleton variant="text" width={100} height={25} />
-              </Box>
-            ))
+            <Box className="menu-item" key={index}>
+              <Skeleton variant="text" width={100} height={25} />
+            </Box>
+          ))
           : items.map((menu, index) => (
-              <motion.div {...animationProps} key={index}>
-                <Box
-                  className="menu-item"
-                  onMouseEnter={() => setOpenMenu(menu.name)}
-                  onMouseLeave={() => setOpenMenu(null)}
+            <motion.div {...animationProps} key={index}>
+              <Box
+                className="menu-item"
+                onMouseEnter={() => setOpenMenu(menu.name)}
+                onMouseLeave={() => setOpenMenu(null)}
+              >
+                <Link
+                  href={menu.link || "#"}
+                  className="menu-link"
+                  onClick={handleLinkClick}
                 >
-                  <Link
-                    href={menu.link || "#"}
-                    className="menu-link"
-                    onClick={handleLinkClick}
-                  >
-                    {menu.name}
-                  </Link>
-                  {menu.children && menu.children.length > 0 && (
-                    <ExpandMoreIcon
-                      className="arrow-icon"
-                      onClick={(e) => handleMenuToggle(e, menu.name)}
-                    />
-                  )}
-                  {menu.children && openMenu === menu.name && (
-                    <Box className="dropdown">
-                      {menu.children.map((item) => (
-                        <Box
-                          className="dropdown-item"
-                          key={item.name}
-                          onMouseEnter={() => setOpenSubMenu(item.name)}
-                          onMouseLeave={() => setOpenSubMenu(null)}
+                  {menu.name}
+                </Link>
+                {menu.children && menu.children.length > 0 && (
+                  <ExpandMoreIcon
+                    className="arrow-icon"
+                    onClick={(e) => handleMenuToggle(e, menu.name)}
+                  />
+                )}
+                {menu.children && openMenu === menu.name && (
+                  <Box className="dropdown">
+                    {menu.children.map((item) => (
+                      <Box
+                        className="dropdown-item"
+                        key={item.name}
+                        onMouseEnter={() => setOpenSubMenu(item.name)}
+                        onMouseLeave={() => setOpenSubMenu(null)}
+                      >
+                        <Link
+                          href={item.link || "#"}
+                          className="submenu-link"
+                          onClick={handleLinkClick}
                         >
-                          <Link
-                            href={item.link || "#"}
-                            className="submenu-link"
-                            onClick={handleLinkClick}
-                          >
-                            {item.name}
-                          </Link>
-                          {item.children && item.children.length > 0 && (
-                            <ArrowRightIcon
-                              className="iconSubMenu"
-                              onClick={(e) => handleSubMenuToggle(e, item.name)}
-                            />
-                          )}
-                          {item.children && openSubMenu === item.name && (
-                            <Box className="sub-dropdown">
-                              {item.children.map((submenu) => (
-                                <Box
-                                  className="sub-dropdown-item"
-                                  key={submenu.name}
+                          {item.name}
+                        </Link>
+                        {item.children && item.children.length > 0 && (
+                          <ArrowRightIcon
+                            className="iconSubMenu"
+                            onClick={(e) => handleSubMenuToggle(e, item.name)}
+                          />
+                        )}
+                        {item.children && openSubMenu === item.name && (
+                          <Box className="sub-dropdown">
+                            {item.children.map((submenu) => (
+                              <Box
+                                className="sub-dropdown-item"
+                                key={submenu.name}
+                              >
+                                <Link
+                                  href={submenu.link || "#"}
+                                  className="submenu-link"
+                                  onClick={handleLinkClick}
                                 >
-                                  <Link
-                                    href={submenu.link || "#"}
-                                    className="submenu-link"
-                                    onClick={handleLinkClick}
-                                  >
-                                    {submenu.name}
-                                  </Link>
-                                </Box>
-                              ))}
-                            </Box>
-                          )}
-                        </Box>
-                      ))}
-                    </Box>
-                  )}
-                </Box>
-              </motion.div>
-            ))}
+                                  {submenu.name}
+                                </Link>
+                              </Box>
+                            ))}
+                          </Box>
+                        )}
+                      </Box>
+                    ))}
+                  </Box>
+                )}
+              </Box>
+            </motion.div>
+          ))}
       </Toolbar>
     </Box>
   );
