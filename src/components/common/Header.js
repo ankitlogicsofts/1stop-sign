@@ -8,54 +8,54 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/navigation";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import CallIcon from '@mui/icons-material/Call';
+import CallIcon from "@mui/icons-material/Call";
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [isLoading, setLoading] = useState(true);
-    const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setLoading] = useState(true);
+  const router = useRouter();
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Sticky header logic
+  useEffect(() => {
+    const isSticky = () => {
+      const header = document.querySelector(".header-section");
+      const scrollTop = window.scrollY;
+      if (header) {
+        scrollTop >= 1
+          ? header.classList.add("is-sticky")
+          : header.classList.remove("is-sticky");
+      }
     };
 
-    // Sticky header logic
-    useEffect(() => {
-        const isSticky = () => {
-            const header = document.querySelector(".header-section");
-            const scrollTop = window.scrollY;
-            if (header) {
-                scrollTop >= 1
-                    ? header.classList.add("is-sticky")
-                    : header.classList.remove("is-sticky");
-            }
-        };
-
-        window.addEventListener("scroll", isSticky);
-        return () => {
-            window.removeEventListener("scroll", isSticky);
-        };
-    }, []);
-
-    // Page load logic
-    useEffect(() => {
-        setIsOpen(false);
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, [router.asPath]);
-
-    const logoanimationProps = {
-        initial: { opacity: 0, x: "-100vw" },
-        animate: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: "-100vw" },
-        transition: {
-            duration: 1.2,
-            ease: [0.25, 0.8, 0.25, 1],
-        },
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
     };
+  }, []);
+
+  // Page load logic
+  useEffect(() => {
+    setIsOpen(false);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [router.asPath]);
+
+  const logoanimationProps = {
+    initial: { opacity: 0, x: "-100vw" },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: "-100vw" },
+    transition: {
+      duration: 1.2,
+      ease: [0.25, 0.8, 0.25, 1],
+    },
+  };
 
     return (
         <>
