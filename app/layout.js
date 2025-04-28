@@ -3,8 +3,8 @@ import Header from "@/src/components/common/Header";
 import Footer from "@/src/components/common/Footer";
 
 import "../public/assets/sass/main.scss";
-import "../public/assets/sass/responsive.scss";
 import "../public/assets/css/main.css";
+import "../public/assets/sass/responsive.scss";
 import { useEffect, useState } from "react";
 import { GetContactInformation } from "@/lib/api/api";
 

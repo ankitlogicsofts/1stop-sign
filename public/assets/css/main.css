@@ -1105,7 +1105,11 @@ section.sec_4.Contact .MainHead {
 .conactBox.col02 a.common_btn {
   color: #fff;
   background: #003366;
+  margin: 0 auto;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 .conactBox.col02 a.common_btn i {
   margin-right: 2px;
@@ -1113,6 +1117,7 @@ section.sec_4.Contact .MainHead {
 .conactBox.col02 a.common_btn::after {
   background-color: #0760b9;
 }
+
 .conactBox.col02 {
   text-align: center;
   margin-top: 30px;
@@ -1409,6 +1414,7 @@ p {
 }
 .navbar-right a.common_btn {
   background: #74bc53;
+  border: 1px solid #74bc53;
 }
 .navbar-right a.common_btn.phone {
   background: transparent;
@@ -1681,9 +1687,10 @@ div#trustSec .MuiGrid-container {
   clear: both;
 }
 #blogDetail h1 {
-  text-align: center;
+  text-align: left;
   color: #003366;
   font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 #blogDetail h2 {
   font-size: 2rem;
@@ -1738,7 +1745,7 @@ ul.breadcrumb {
 /* Display list items side by side */
 ul.breadcrumb li {
   display: inline;
-  font-size: 18px;
+  font-size: 16px;
   color: #0056b3;
 }
 .m20auto {
@@ -2199,6 +2206,62 @@ p {
   display: flex;
   column-gap: 20px;
 }
+#SignMakers.SignsInLondon {
+  background: none;
+}
+#SignMakers.SignsInLondon .MainHead {
+  max-width: fit-content;
+  margin-bottom: 2.5rem;
+}
+#SignMakers.SignsInLondon .slick-prev,
+#SignMakers.SignsInLondon .slick-next {
+  top: -15% !important;
+  background: #003366 !important;
+}
+#SignMakers.SignsInLondon .slick-prev:before,
+#SignMakers.SignsInLondon .slick-next:before {
+  color: #fff !important;
+  opacity: 1;
+}
+#SignMakers.SignsInLondon .MainHead h2 {
+  margin-bottom: 1rem;
+}
+#SignMakers.SignsInLondon .GridBox {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  position: relative;
+  height: auto !important;
+}
+#SignMakers.SignsInLondon .GridBox h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: center;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  background: #000000a6;
+  padding: 5px;
+  margin: 0;
+  font-weight: 500;
+}
+.slideImg {
+  width: 100%;
+  height: auto;
+}
+
+.slideImg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.Contact .conactBox.col02 svg {
+  color: #fff;
+}
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover > .submenu {
     opacity: 1;
@@ -2523,7 +2586,7 @@ p {
     min-height: 80px;
   }
   .navbar-right a.common_btn.Quote {
-    margin-right: 8px;
+    margin-right: 45%;
   }
 
   .megamenu {
@@ -2637,7 +2700,7 @@ p {
     padding: 20px 0 35px;
   }
   .MainHead h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
   section.sec_2.why {
     padding: 25px 0 10px;
@@ -2671,7 +2734,7 @@ p {
     padding-top: 20px;
   }
   section.sec_4.Contact .MainHead {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   section.sec_2.why .MainHead {
     margin: 0 auto 10px;
@@ -2681,6 +2744,11 @@ p {
   }
   section.sec_4.Contact {
     padding: 20px 0 5px;
+    padding-bottom: 3em;
+  }
+  .footer_logo img {
+    height: 40.5px;
+    margin: 0px;
   }
   .footMenu ul li {
     margin: 0 0 6px;
@@ -2769,6 +2837,15 @@ p {
   }
   .trustBox.Experience .imgIcon {
     width: 63px;
+  }
+  .menu-item .arrow-icon {
+    top: 10px;
+  }
+  .MainHead h1 {
+    font-size: 35px;
+  }
+  section.ctaSection {
+    padding: 3em 0;
   }
 }
 

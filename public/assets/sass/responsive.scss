@@ -4,7 +4,7 @@
         fill: #E41E26;
         border-radius: 4px;
         position: absolute;
-        top: 10px;
+        top: 21px;
         right: 0;
     }
 
@@ -115,6 +115,303 @@
         padding: 8px 0;
         border-bottom: 1px solid #efefef;
         display: block;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media(max-width:1024px) {
+    .services .gridHead {
+        margin-bottom: 3em !important;
+        border: none;
+    }
+
+    .services .slick-prev,
+    .services .slick-next {
+        top: -9% !important;
+    }
+
+    .services .slick-prev {
+        left: inherit !important;
+        right: 12% !important;
+    }
+
+    .gridCol.left {
+        width: 100%;
+        text-align: center;
+    }
+
+    video.ugb-video-preview {
+        padding: 0;
+    }
+
+    #client_slider .slick-next {
+        left: 88% !important;
+        bottom: -17% !important;
+    }
+
+    #client_slider .slick-prev {
+        top: inherit !important;
+        left: 0 !important;
+        right: 7% !important;
+        bottom: -17% !important;
+    }
+
+    #client_slider .slick-track {
+        column-gap: 0;
+    }
+
+    .conactBox {
+        padding: 15px 20px;
+    }
+
+    .conactBox {
+        background: #fff;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: 0;
+    }
+
+    #client_slider .slick-dots {
+        margin-bottom: 21px !important;
+    }
+
+    #MainSlide {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+    .headerWrp .logo {
+        width: 100px;
+    }
+
+    .headerWrp .menuIcon {
+        position: absolute;
+        right: 12px;
+        z-index: 99;
+        padding: 0;
+    }
+
+    .headerSec {
+        padding: 10px 0;
+    }
+
+    .MainHero {
+        text-align: center;
+        padding: 0 15px !important;
+    }
+
+    .MainHero h2 {
+        padding: 0 !important;
+    }
+
+    .MainHero_content .banner_btn {
+        margin: 20px 0 0;
+        display: flex;
+        column-gap: 10px;
+        justify-content: center;
+    }
+
+    .footer {
+        padding: 3em 0px !important;
+    }
+
+    .footerMap iframe {
+        height: 220px;
+    }
+
+    #TypesOfSignage .slick-slider .slick-prev,
+    #TypesOfSignage .slick-slider .slick-next {
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        top: 240px !important;
+        z-index: 9;
+    }
+
+    #TypesOfSignage .slick-prev {
+        left: inherit !important;
+        right: inherit !important;
+        top: -15% !important;
+    }
+
+    #TypesOfSignage .desc {
+        text-align: center;
+    }
+
+    #TypesOfSignage .item {
+        height: auto !important;
+    }
+
+    #TypesOfSignage .GridBox {
+        height: 100% !important;
+    }
+
+    .PerfectSignBoxWrp {
+        flex-direction: column;
+    }
+
+    .PerfectSignBoxWrp .BoxSign {
+        width: calc(100% - 14px);
+    }
+
+    #PerfectSign .BoxSign h3 {
+        font-size: 26px;
+    }
+
+    .PerfectSignBoxWrp .BoxSign:nth-last-child(2),
+    .PerfectSignBoxWrp .BoxSign:last-child {
+        width: calc(100% - 10px);
+    }
+
+    #PerfectSign .GridWrap {
+        padding-bottom: 0;
+    }
+
+    section.sec_2.why.MuiBox-root {
+        padding: 3em 0;
+    }
+
+    section.faqSection {
+        padding: 3em 0;
+    }
+
+    #SignMakers .gridHead {
+        margin-top: 0;
+    }
+
+    #SignMakers .GridBox {
+        max-height: fit-content;
+    }
+
+    section#SignMakers .GridWrap .slick-prev,
+    section#SignMakers .GridWrap .slick-next {
+        top: 240px !important;
+        z-index: 9;
+    }
+
+    section#SignMakers .GridWrap .slick-prev {
+        left: inherit !important;
+        right: inherit !important;
+    }
+
+    section#SignMakers .GridWrap {
+        padding-bottom: 0;
+    }
+
+    #SignMakers .slick-track {
+        column-gap: 0;
+    }
+
+    #PerfectSign .gridHead {
+        margin-top: 0px;
+    }
+
+    #PerfectSign .gridHead h2 {
+        margin-top: 0;
+    }
+
+    #PerfectSign .gridCol {
+        text-align: center;
+    }
+
+    section.sec_3.ourWork.bg2 {
+        padding: 3em 0;
+    }
+
+    #SignMakers.SignsInLondon {
+        padding-top: 2.5em;
+        clear: both;
+    }
+
+    #IdealShop {
+        padding: 3em 0;
+    }
+
+    #IdealShop .contentArea:first-child {
+        padding-left: 8em;
+        padding-right: 3em;
+    }
+
+    #IdealShop .contentArea {
+        padding-right: 15px !important;
+        text-align: center;
+    }
+
+    #IdealShop .MuiGrid-container:last-child {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 2em;
+    }
+
+    #IdealShop .contentArea:first-child {
+        margin-bottom: 3em;
+    }
+
+    #IdealShop h2 {
+        font-size: 1.7rem;
+    }
+
+    #IdealShop .contentArea:last-child {
+        margin-bottom: 2em;
+    }
+
+    #IdealShop .contentArea:first-child {
+        padding-left: 3em;
+    }
+
+    section.MainHero {
+        border-bottom: 1px solid #d3e3f7;
+        padding: 1em 0 !important;
+    }
+
+    .MainHero_content h1 {
+        font-size: 2.3rem;
+        line-height: 42px;
+        margin-bottom: 14px;
+    }
+
+    #BlogSection .boxB {
+        margin-top: 0;
+    }
+
+    #BlogSection .boxBcontent {
+        text-align: center;
+    }
+
+    #BlogSection .boxB h3 {
+        margin-bottom: 10px;
+    }
+
+    #BlogSection .readMbtn {
+        margin-bottom: 20px;
+    }
+
+    #blogDetail h1 {
+        line-height: normal;
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    ul.breadcrumb {
+        display: inline-block;
+    }
+
+    ul.breadcrumb li {
+        font-size: 14px;
+    }
+
+    #blogDetail h1,
+    #blogDetail h2,
+    #blogDetail h3,
+    #blogDetail h4,
+    #blogDetail h5,
+    #blogDetail h6 {
+        line-height: normal;
     }
 }
 

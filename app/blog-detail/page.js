@@ -7,17 +7,17 @@ const Page = () => {
             <div className="container">
                 <h1>Why Custom Signage is the Best Investment for Small Business Growth</h1>
 
+                <ul className="breadcrumb">
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/blog">Blog</Link></li>
+                    <li>Why Custom Signage is the Best Investment for Small Business Growth</li>
+                </ul>
                 <img
                     src="https://www.1stopsigns.co.uk/wp-content/uploads/2025/03/Depositphotos_593503520_XL-scaled.jpg"
                     alt="Custom Signage"
                     style={{ width: '100%' }}
                 />
 
-                <ul className="breadcrumb">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/blog">Blog</Link></li>
-                    <li>Why Custom Signage is the Best Investment for Small Business Growth</li>
-                </ul>
 
                 <div className="blog">
                     <p>

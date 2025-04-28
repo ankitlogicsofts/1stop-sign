@@ -7,7 +7,6 @@ import TrustValueProps from "@/src/components/TrustValueProps";
 import { Box } from "@mui/material";
 import FeaturedWork from "@/src/components/FeaturedWork";
 import WhyChooseUs from "@/src/components/WhyChooseUs";
-import SignageSolutions from "@/src/components/SignageSolutions";
 import Testimonials from "@/src/components/Testimonials";
 import OurServices from "@/src/components/OurServices";
 import { HomePage } from "../lib/api/api";
@@ -40,7 +39,6 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <ContactUs />
-      <SignageSolutions />
     </>
   );
 }

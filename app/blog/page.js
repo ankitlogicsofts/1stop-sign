@@ -26,7 +26,7 @@ const BlogSection = () => {
                 <Grid container spacing={3}>
                     {blogs.map((blog, index) => (
                         <Grid item key={index} xs={12} sm={6} md={4}>
-                            <a href="blog-detail.html" className="boxB">
+                            <a href="blog-detail" className="boxB">
                                 <Image src={blog.img} alt="img" width={400} height={250} style={{ width: '100%', height: 'auto' }} />
                                 <Typography className="date">{blog.date}</Typography>
                                 <Box className="boxBcontent">
