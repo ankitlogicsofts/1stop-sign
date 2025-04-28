@@ -5,8 +5,9 @@ import { Box, Container, Grid, Button, Typography } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import { HomePage } from "@/lib/api/api";
 
-const HeroBanner = ({ heroSection }) => {
+const HeroBanner = () => {
   const settings = {
     dots: true,
     arrows: false,
@@ -17,7 +18,25 @@ const HeroBanner = ({ heroSection }) => {
     slidesToScroll: 1,
     pauseOnHover: false,
   };
-  console.log(heroSection);
+  // console.log(heroSection);
+
+  const [heroSection, setHeroSection] = useState(null);
+  const [trustExperience, setTrustExperience] = useState(null);
+  useEffect(() => {
+    const fetchHomePage = async () => {
+      try {
+        const response = await HomePage();
+        if (response) {
+          setHeroSection(response?.herosection);
+          setTrustExperience(response?.trustExperience);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchHomePage();
+  }, []);
 
   return (
     <section className="MainHero">
