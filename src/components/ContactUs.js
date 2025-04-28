@@ -1,111 +1,190 @@
-import React from 'react';
-import { Grid, TextField, Button, Typography, Box } from '@mui/material';
-import { Phone, Email, LocationOn, AccessTime } from '@mui/icons-material';
+import React, { useState, useEffect } from "react";
+import { Grid, TextField, Button, Typography, Box } from "@mui/material";
+import { Phone, Email, LocationOn, AccessTime } from "@mui/icons-material";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Alert } from "@mui/material";
+import ContactInformation from "./ContactInformation";
 
 const ContactUs = () => {
-    return (
-        <section className="sec_4 Contact">
-            <div className="container">
-                <Grid container spacing={4}>
-                    <Grid item xs={12}>
-                        <div className="MainHead">
-                            <h2>Contact Us</h2>
-                            <p>Have questions or ready to order? Get in touch with our team today.</p>
-                        </div>
-                    </Grid>
+  const [successMessage, setSuccessMessage] = useState("");
 
-                    <Grid item xs={12} md={6}>
-                        <Box className="conactBox">
-                            <h3>Send Us a Message</h3>
-                            <form>
-                                <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={6}>
-                                        <TextField fullWidth label="Your Name" variant="outlined" placeholder="John Smith" />
-                                    </Grid>
-                                    <Grid item xs={12} sm={6}>
-                                        <TextField fullWidth label="Email Address" variant="outlined" placeholder="john@example.com" />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField fullWidth label="Phone Number" variant="outlined" placeholder="0123 456 7890" />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField fullWidth label="Subject" variant="outlined" />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField
-                                            fullWidth
-                                            multiline
-                                            rows={9}
-                                            label="Your Message"
-                                            variant="outlined"
-                                            placeholder="Please provide details about your requirements..."
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <Button variant="contained" color="error" className="common_btn">
-                                            Submit
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </form>
-                        </Box>
+  const initialValues = {
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  };
 
-                    </Grid>
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    phone: Yup.string()
+      .required("Phone number is required")
+      .matches(/^\d{10}$/, "Phone number must be 10 digits"),
+    subject: Yup.string().required("Subject is required"),
+    message: Yup.string().required("Message is required"),
+  });
 
-                    <Grid item xs={12} md={6}>
-                        <Box className="conactBox col01">
-                            <h3>Contact Information</h3>
-                            <Box className="contInfoWrap">
-                                <Box className="contInfo">
-                                    <Phone className="icon" />
-                                    <div className="iconTxt">
-                                        <div className="bold">Phone</div>
-                                        <div><a href="tel:02081680001">020 8168 0001</a></div>
-                                    </div>
-                                </Box>
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      const response = await PostContact(values);
+      console.log("Response:", response.data);
+      setSuccessMessage(response.data?.message || "Message sent successfully!");
+      resetForm();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
-                                <Box className="contInfo">
-                                    <Email className="icon" />
-                                    <div className="iconTxt">
-                                        <div className="bold">Email</div>
-                                        <div><a href="mailto:info@1stopsigns.co.uk">info@1stopsigns.co.uk</a></div>
-                                    </div>
-                                </Box>
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
-                                <Box className="contInfo">
-                                    <LocationOn className="icon" />
-                                    <div className="iconTxt">
-                                        <div className="bold">Address</div>
-                                        <div>258 Green Ln, Ilford <br />IG1 1YF, UK</div>
-                                    </div>
-                                </Box>
-
-                                <Box className="contInfo">
-                                    <AccessTime className="icon" />
-                                    <div className="iconTxt">
-                                        <div className="bold">Business Hours</div>
-                                        <div>
-                                            Monday - Friday: 8:30 AM - 5:30 PM <br />
-                                            Saturday: 9:00 AM - 1:00 PM <br />
-                                            Sunday: Closed
-                                        </div>
-                                    </div>
-                                </Box>
-                            </Box>
-                        </Box>
-
-                        <Box className="conactBox col02">
-                            <h3>24/7 Signage Assistance</h3>
-                            <p>For urgent signage requirements, contact our 24/7 emergency hotline.</p>
-                            <Button variant="contained" color="secondary" href="tel:02081680001" className="common_btn" startIcon={<Phone />}>
-                                020 8168 0001
-                            </Button>
-                        </Box>
-                    </Grid>
-                </Grid>
+  return (
+    <section className="sec_4 Contact">
+      <div className="container">
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <div className="MainHead">
+              <h2>Contact Us</h2>
+              <p>
+                Have questions or ready to order? Get in touch with our team
+                today.
+              </p>
             </div>
-        </section>
-    );
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Box className="conactBox">
+              <h3>Send Us a Message</h3>
+              {successMessage && (
+                <Alert severity="success" sx={{ mb: 2 }}>
+                  {successMessage}
+                </Alert>
+              )}
+
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {({
+                  values,
+                  handleChange,
+                  handleBlur,
+                  touched,
+                  errors,
+                  isSubmitting,
+                }) => (
+                  <Form>
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          fullWidth
+                          name="name"
+                          label="Your Name"
+                          variant="outlined"
+                          placeholder="John Smith"
+                          value={values.name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          error={touched.name && Boolean(errors.name)}
+                          helperText={touched.name && errors.name}
+                        />
+                      </Grid>
+                      <Grid item xs={12} sm={6}>
+                        <TextField
+                          fullWidth
+                          name="email"
+                          label="Email Address"
+                          variant="outlined"
+                          placeholder="john@example.com"
+                          value={values.email}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          error={touched.email && Boolean(errors.email)}
+                          helperText={touched.email && errors.email}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          name="phone"
+                          label="Phone Number"
+                          variant="outlined"
+                          placeholder="0123 456 7890"
+                          value={values.phone}
+                          onBlur={handleBlur}
+                          error={touched.phone && Boolean(errors.phone)}
+                          helperText={touched.phone && errors.phone}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            if (/^\d*$/.test(value)) {
+                              handleChange(e);
+                            }
+                          }}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          name="subject"
+                          label="Subject"
+                          variant="outlined"
+                          value={values.subject}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          error={touched.subject && Boolean(errors.subject)}
+                          helperText={touched.subject && errors.subject}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextField
+                          fullWidth
+                          name="message"
+                          multiline
+                          rows={9}
+                          label="Your Message"
+                          variant="outlined"
+                          placeholder="Please provide details about your requirements..."
+                          value={values.message}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          error={touched.message && Boolean(errors.message)}
+                          helperText={touched.message && errors.message}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button
+                          variant="contained"
+                          color="error"
+                          className="common_btn"
+                          type="submit"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? "Submitting..." : "Submit"}
+                        </Button>
+                      </Grid>
+                    </Grid>
+                  </Form>
+                )}
+              </Formik>
+            </Box>
+          </Grid>
+          <ContactInformation pageType="contactUs" />
+        </Grid>
+      </div>
+    </section>
+  );
 };
 
 export default ContactUs;
