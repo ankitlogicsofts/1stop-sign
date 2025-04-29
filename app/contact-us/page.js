@@ -12,9 +12,11 @@ import {
 import { Phone, Email, LocationOn, AccessTime } from "@mui/icons-material";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { PostContact } from "@/lib/api/api";
+import { GetContactPage, PostContact } from "@/lib/api/api";
 import { Alert } from "@mui/material";
 import ContactInformation from "@/src/components/ContactInformation";
+import Image from "next/image";
+import Skeleton from "@mui/material/Skeleton";
 
 const ContactPage = () => {
   const [successMessage, setSuccessMessage] = useState("");
@@ -59,21 +61,70 @@ const ContactPage = () => {
     }
   }, [successMessage]);
 
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchContactPage = async () => {
+      try {
+        const response = await GetContactPage();
+        if (response) {
+          setData(response?.data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContactPage();
+  }, []);
+
   return (
     <>
-      <img
-        src="/assets/images/contactUs.jpg"
-        style={{ width: "100%" }}
-        alt="Contact Us"
-      />
+      {loading ? (
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={416}
+          animation="wave"
+          style={{ borderRadius: "8px" }}
+        />
+      ) : (
+        <Image
+          src={data?.image || "/assets/images/contactUs.jpg"}
+          alt="Contact Us"
+          title={data?.title || "Contact Us"}
+          width={1200}
+          height={600}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
+      )}
 
       <section className="sec_4 Contact">
         <Box className="container">
           <Grid container spacing={4}>
             <Grid item xs={12} className="MainHead">
-              <Typography variant="h1" align="center" className="commonHeading">
-                Contact Us
-              </Typography>
+              {loading ? (
+                <Skeleton
+                  variant="text"
+                  align="center"
+                  width="20%"
+                  height={80}
+                  className="commonHeading"
+                  style={{ margin: "0 auto" }}
+                />
+              ) : (
+                <Typography
+                  variant="h1"
+                  align="center"
+                  className="commonHeading"
+                >
+                  {data?.title || "Contact Us"}
+                </Typography>
+              )}
             </Grid>
 
             <Grid item xs={12}>
