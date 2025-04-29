@@ -27,47 +27,44 @@ const ContactInformation = ({ pageType }) => {
         <Box className="contInfoWrap">
           <Box className="contInfo">
             <Phone className="icon" />
-            <div className="iconTxt">
-              <div className="bold">Phone</div>
-              <div>
+            <Box className="iconTxt">
+              <Box className="bold">Phone</Box>
+              <Box>
                 <a href={`tel:${data?.phone}`}>{data?.phone}</a>
-              </div>
-            </div>
+              </Box>
+            </Box>
           </Box>
 
           <Box className="contInfo">
             <Email className="icon" />
-            <div className="iconTxt">
-              <div className="bold">Email</div>
-              <div>
+            <Box className="iconTxt">
+              <Box className="bold">Email</Box>
+              <Box>
                 <a href={`tel:${data?.email}`}>{data?.email}</a>
-              </div>
-            </div>
+              </Box>
+            </Box>
           </Box>
 
           <Box className="contInfo">
             <LocationOn className="icon" />
-            <div className="iconTxt">
-              <div className="bold">Address</div>
-              <div>{data?.address}</div>
-            </div>
+            <Box className="iconTxt">
+              <Box className="bold">Address</Box>
+              <Box>{data?.address}</Box>
+            </Box>
           </Box>
 
           <Box className="contInfo">
             <AccessTime className="icon" />
-            <div className="iconTxt">
-              <div className="bold">Business Hours</div>
-              <div>
-                {/* Monday - Friday: 8:30 AM - 5:30 PM <br />
-            Saturday: 9:00 AM - 1:00 PM <br />
-            Sunday: Closed */}
+            <Box className="iconTxt">
+              <Box className="bold">Business Hours</Box>
+              <Box>
                 {data?.business_hours?.map((item, index) => (
-                  <div key={index}>
+                  <Box key={index}>
                     {item.day}: {item.timing ? item.timing : "Closed"}
-                  </div>
+                  </Box>
                 ))}
-              </div>
-            </div>
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>
