@@ -15,6 +15,21 @@ const ServiceSlider = () => {
         slidesToScroll: 1, // Number of slides to scroll at once
         prevArrow: <button type="button" className="slick-prev">Previous</button>,
         nextArrow: <button type="button" className="slick-next">Next</button>,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                },
+            },
+        ],
     };
 
     // Function to set equal height for all items
