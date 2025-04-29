@@ -12,11 +12,25 @@ const HeroBanner = () => {
     dots: true,
     arrows: false,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   // console.log(heroSection);
 
@@ -74,23 +88,42 @@ const HeroBanner = () => {
 
           <Grid item md={6}>
             <Box id="MainSlide">
-              <Slider {...settings} className="MainSlide">
-                {heroSection?.images?.map((image, index) => (
-                  <Box key={index} className="item">
+              {heroSection?.images?.length > 1 ? (
+                <Slider {...settings} className="MainSlide">
+                  {heroSection.images.map((image, index) => (
+                    <Box key={index} className="item">
+                      <Box className="slideImg" sx={{ position: 'relative', width: '100%', height: 'auto' }}>
+                        <Image
+                          src={image.slider_image}
+                          alt={image.slider_image_alt || "slider image"}
+                          title={image.slider_image_title || "slider image"}
+                          width={595}
+                          height={446}
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      </Box>
+                    </Box>
+                  ))}
+                </Slider>
+              ) : (
+                heroSection?.images?.[0] && (
+                  <Box className="item">
                     <Box className="slideImg">
                       <Image
-                        src={image.slider_image}
-                        alt={image.slider_image_alt || "slider image"}
-                        title={image.slider_image_title || "slider image"}
+                        src={heroSection.images[0].slider_image}
+                        alt={heroSection.images[0].slider_image_alt || "slider image"}
+                        title={heroSection.images[0].slider_image_title || "slider image"}
                         width={595}
                         height={446}
+                        style={{ width: "100%", height: "auto" }}
                       />
                     </Box>
                   </Box>
-                ))}
-              </Slider>
+                )
+              )}
             </Box>
           </Grid>
+
         </Grid>
       </Box>
     </section>
