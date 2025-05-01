@@ -27,28 +27,6 @@ const Testimonials = () => {
     ],
   };
 
-  //   const testimonialData = [
-  //     {
-  //       name: "Alex Bates",
-  //       role: "Highway Maintenance Manager",
-  //       message: `"We've been using 1stopsigns for all our road signage needs for over 5 years. Their quality is exceptional, and delivery is always prompt. Highly recommended!"`,
-  //     },
-  //     {
-  //       name: "Allie Grater",
-  //       role: "Highway Maintenance Manager",
-  //       message: `"We've been using 1stopsigns for all our road signage needs for over 5 years. Their quality is exceptional, and delivery is always prompt. Highly recommended!"`,
-  //     },
-  //     {
-  //       name: "John Smith",
-  //       role: "Highway Maintenance Manager",
-  //       message: `"We've been using 1stopsigns for all our road signage needs for over 5 years. Their quality is exceptional, and delivery is always prompt. Highly recommended!"`,
-  //     },
-  //     {
-  //       name: "Allie Grater",
-  //       role: "Highway Maintenance Manager",
-  //       message: `"We've been using 1stopsigns for all our road signage needs for over 5 years. Their quality is exceptional, and delivery is always prompt. Highly recommended!"`,
-  //     },
-  //   ];
 
   const [testimonialData, setTestimonialData] = useState(null);
   useEffect(() => {
