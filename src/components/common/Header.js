@@ -143,8 +143,8 @@ const Header = () => {
                     {isLoading ? (
                       <Skeleton
                         variant="rectangle"
-                        width={241}
-                        height={97}
+                        width={164}
+                        height={64}
                         className="logo"
                         animation="wave"
                       />
@@ -207,16 +207,11 @@ const Header = () => {
         </Box>
         <Modal open={open} onClose={handleClose}>
           <Box sx={style} id="quotePopup" className="popup-form-overlay">
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              mb={2}
-            >
+            <Box className="topArea">
               <Typography variant="h2">
                 Get a Free <span>Quote</span>
               </Typography>
-              <IconButton onClick={handleClose}>
+              <IconButton onClick={handleClose} className="close-popup">
                 <CloseIcon />
               </IconButton>
             </Box>
@@ -285,7 +280,7 @@ const Header = () => {
                         helperText={touched.message && errors.message}
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} className="text-center">
                       <Button
                         variant="contained"
                         color="error"

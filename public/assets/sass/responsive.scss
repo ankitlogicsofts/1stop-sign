@@ -179,9 +179,7 @@
         margin-bottom: 21px !important;
     }
 
-    #MainSlide {
-        display: none;
-    }
+
 }
 
 @media(max-width:768px) {
@@ -412,6 +410,11 @@
     #blogDetail h5,
     #blogDetail h6 {
         line-height: normal;
+    }
+
+    #MainSlide {
+        max-width: 350px;
+        margin: 0 auto;
     }
 }
 

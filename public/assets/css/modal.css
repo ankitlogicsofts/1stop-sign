@@ -1,21 +1,22 @@
 .popup-form-box {
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 10px;
-    position: relative;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
 }
 .popup-form-overlay h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 #quotePopup.popup-form-overlay h2 span {
-    color: #e2141a;
+  color: #e2141a;
 }
 h2 {
-    font-size: 60px;
-    font-weight: 700;
-    color: #023568;
+  font-size: 60px;
+  font-weight: 700;
+  color: #023568;
 }

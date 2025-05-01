@@ -2262,6 +2262,38 @@ p {
 .Contact .conactBox.col02 svg {
   color: #fff;
 }
+/* #quotePopup .MuiInputBase-formControl input {
+  padding: 0.375rem 0.75rem;
+} */
+.popup-form-overlay .common_btn {
+  background: #74bc53;
+  display: inline-block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  height: 45px;
+  padding: 0px 25px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  line-height: 43px;
+  position: relative;
+  border: 0;
+  text-transform: capitalize;
+}
+.popup-form-overlay .common_btn:hover {
+  background: #559737;
+}
+.text-center {
+  text-align: center;
+}
+
+#quotePopup .close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover > .submenu {
     opacity: 1;
@@ -2846,6 +2878,14 @@ p {
   }
   section.ctaSection {
     padding: 3em 0;
+  }
+  div#quotePopup {
+    max-width: 500px;
+    width: 77%;
+    top: 40%;
+    margin: 0 15px;
+    left: 15px;
+    transform: translate(-15px, -50%);
   }
 }
 
