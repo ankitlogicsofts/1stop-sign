@@ -577,7 +577,8 @@ ul.menu-inner {
   margin: 30px 0 0;
 }
 section.MainHero {
-  padding: 80px 0 90px;
+  padding: 2em 0;
+  clear: both;
   background: #ffffff;
   background: -webkit-linear-gradient(
     0deg,
@@ -1494,6 +1495,7 @@ div#trustSec .MuiGrid-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1300px;
 }
 .trustBox:last-child:after {
   border-right: 0 !important;
@@ -2301,7 +2303,7 @@ p {
     margin-top: 1rem;
   }
   .trustBox:after {
-    right: -35%;
+    right: -40%;
   }
 }
 
