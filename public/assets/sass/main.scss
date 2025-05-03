@@ -138,7 +138,7 @@ body {
 
         .menu-link {
             color: #3b4958;
-            font-size: 19px;
+            font-size: 18px;
             text-decoration: none;
             position: relative;
             font-weight: 700;
@@ -170,14 +170,12 @@ body {
                 position: relative;
 
                 &:hover {
-                    background: #e41e26;
-
                     .submenu-link {
-                        color: #fff;
+                        color: #e41e26;
                     }
 
                     .iconSubMenu {
-                        color: #fff;
+                        color: #e41e26;
                     }
                 }
 
@@ -189,21 +187,21 @@ body {
 
                 .submenu-link {
                     padding: 8px 16px;
-                    color: #000;
-                    font-size: 14px;
+                    color: #3b4958;
+                    font-size: 18px;
                     text-decoration: none;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     min-height: 26px;
+                    font-weight: 700;
+                    font-family: "Sofia Pro";
 
                     &:hover {
-                        background: #d2ac67;
-                        color: #fff;
-                        background-color: #d2ac67;
+                        color: #e41e26;
 
                         .iconSubMenu {
-                            color: #d2ac67;
+                            color: #e41e26;
                         }
                     }
                 }
@@ -219,15 +217,13 @@ body {
                         border-bottom: 1px solid #e8e8e8;
 
                         .submenu-link {
-                            color: #000;
-                            font-size: 14px;
+                            color: #3b4958;
+                            font-size: 18px;
                             text-decoration: none;
                             padding: 8px 16px;
 
                             &:hover {
-                                background: #d2ac67;
-                                color: #fff;
-                                background-color: #d2ac67;
+                                color: #e41e26;
                             }
                         }
                     }
