@@ -23,6 +23,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Alert } from "@mui/material";
 import { PostContact } from "@/lib/api/api";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { Padding } from "@mui/icons-material";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -264,7 +269,89 @@ const Header = () => {
                         helperText={touched.email && errors.email}
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sm={6}>
+                      <TextField
+                        fullWidth
+                        name="phone"
+                        label="Phone"
+                        variant="outlined"
+                        placeholder="Phone"
+                        value={values.tel}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={touched.tel && Boolean(errors.tel)}
+                        helperText={touched.tel && errors.tel}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                      {/* <TextField
+                        fullWidth
+                        name="time"
+                        label="Time"
+                        variant="outlined"
+                        placeholder="Preferred Completion Time"
+                        value={values.date}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={touched.date && Boolean(errors.date)}
+                        helperText={touched.date && errors.date}
+                      /> */}
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer
+                          components={["DatePicker"]}
+                          variant="outlined"
+                        >
+                          <DatePicker label="Preferred Date" />
+                        </DemoContainer>
+                      </LocalizationProvider>
+                    </Grid>
+
+                    <Grid item xs={12} sm={12}>
+                      <Field name="files">
+                        {({ form }) => (
+                          <>
+                            <input
+                              type="file"
+                              id="fileUpload"
+                              name="files"
+                              multiple
+                              accept="application/pdf,image/*"
+                              style={{ display: "none" }}
+                              onChange={(event) => {
+                                const files = Array.from(
+                                  event.currentTarget.files
+                                );
+                                form.setFieldValue("files", files);
+                              }}
+                            />
+                            <TextField
+                              label="Upload Artwork"
+                              value={
+                                form.values.files && form.values.files.length
+                                  ? form.values.files
+                                      .map((f) => f.name)
+                                      .join(", ")
+                                  : ""
+                              }
+                              fullWidth
+                              margin="normal"
+                              InputProps={{ readOnly: true }}
+                              onClick={() => {
+                                document.getElementById("fileUpload").click();
+                              }}
+                              sx={{ margin: 0 }}
+                            />
+                            <ErrorMessage
+                              name="files"
+                              component="div"
+                              style={{ color: "red", fontSize: "0.8rem" }}
+                            />
+                          </>
+                        )}
+                      </Field>
+                    </Grid>
+
+                    {/* <Grid item xs={12}>
                       <TextField
                         fullWidth
                         name="message"
@@ -279,7 +366,7 @@ const Header = () => {
                         error={touched.message && Boolean(errors.message)}
                         helperText={touched.message && errors.message}
                       />
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12} className="text-center">
                       <Button
                         variant="contained"

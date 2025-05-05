@@ -117,7 +117,7 @@
     },
     {
       "name": "Services",
-      "link": "#",
+      "link": "services",
       "type": "page",
       "children": [
         {
@@ -150,6 +150,16 @@
     {
       "name": "Latest Work",
       "link": "latest-work",
+      "type": "page"
+    },
+    {
+      "name": "FAQ",
+      "link": "faq",
+      "type": "page"
+    },
+    {
+      "name": "Blog",
+      "link": "blog",
       "type": "page"
     },
     {

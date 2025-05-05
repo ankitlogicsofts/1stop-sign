@@ -9,6 +9,7 @@ import Testimonials from "@/src/components/Testimonials";
 import WhyChooseUs from "@/src/components/WhyChooseUs";
 import { notFound } from "next/navigation";
 import { GetProductData } from "@/lib/api/api";
+import TrustValueProps from "@/src/components/TrustValueProps";
 
 const page = ({ params }) => {
   const { slug } = params;
@@ -39,6 +40,7 @@ const page = ({ params }) => {
   return (
     <>
       <HeroSection />
+      <TrustValueProps />
       <SignsInLondon />
       <WhyChooseUs />
       <IdealShop />

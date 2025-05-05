@@ -256,7 +256,9 @@ body {
 .menu-link .arrow-icon {
     transition: transform 0.3s ease;
 }
-
+.navBar .menu-item .dropdown{
+    min-width: 260px;
+}
 .navBar .menu-item .dropdown .dropdown-item:hover>.sub-dropdown {
     overflow: auto;
     max-height: 568px;
@@ -718,4 +720,119 @@ body {
         margin-bottom: 20px;
     }
 
+}
+#OurCompetitiveSec{
+    background: #ffffff;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(239, 246, 255, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(239, 246, 255, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(239, 246, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#EFF6FF", GradientType=0 );
+    .MainHead {
+        max-width: fit-content;
+    }
+    h2{
+        margin-bottom: 1rem;
+    }
+    li{
+        padding: 0;
+    }
+    .getTitle{
+        text-align: center;
+        display: block !important;
+        margin-bottom: 1rem;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .popup-form-overlay{
+        background: #fff;
+    }
+}
+#quotePopup{
+    .MuiStack-root{
+        padding-top: 0;
+    }
+}
+.subTitle{
+    text-align: center;
+    font-size: 2rem!important;
+    position: relative;
+    span {
+        padding: 0 25px;
+        z-index: 2;
+        background: #f5f5f5;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+    &:after {
+        border-bottom: 1px solid rgb(0 51 102);
+        content: "";
+        display: block;
+        position: absolute;
+        top: 21px;
+        width: 100%;
+        z-index: 1;
+      }
+  }
+  #ExperienceServicesSec{
+    position: relative;
+    text-align: center;
+    background: #003366;
+    .MainHead{
+        max-width: max-content;
+        margin-bottom: 1rem;
+      
+    
+}
+    h2{
+        color: #fff;
+    }
+    p{
+        margin-bottom: 1rem;
+        color: #fff!important;
+    }
+  }
+.contentSec{
+h3{
+    font-size: 1.5rem!important;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+}
+#IdealShop #PrintingService{
+    h2{
+        margin-bottom: 2rem;
+    }
+}
+#ExceptionalCustomer{
+    background: #b0cb1f;
+    color: #fff;
+    padding: 3em 0;
+    text-align: center;
+    border-radius: 0;
+    .MainHead{
+        max-width: fit-content;
+    }
+    h2 {
+        color: #f2f2f2;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    p {
+        color: #000;
+        margin-bottom: 1rem;
+    }
 }
