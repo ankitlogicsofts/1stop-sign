@@ -1940,7 +1940,7 @@ p {
   padding: 15px;
 }
 .bg1 {
-  background: #f5f5f5;
+  background: #f5f5f5!important;
 }
 #SignMakers {
   background: #eff6ff;
@@ -1949,7 +1949,6 @@ p {
   border: 1px solid #f0f0f0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  height: 100%;
   max-height: 400px;
 }
 #SignMakers .GridBox ul {
@@ -2130,6 +2129,7 @@ p {
   border-radius: 0px;
   box-shadow: 0 0 15px #3333330d;
   padding: 0px;
+  display: block;
 }
 #IdealShop .row {
   align-items: center;
@@ -2295,6 +2295,15 @@ p {
   right: 15px;
   font-size: 24px;
   cursor: pointer;
+}
+.containerSmall{
+  max-width: 1100px!important;
+}
+.mb-0{
+  margin-bottom: 0!important;
+}
+.pb-0{
+  padding-bottom: 0!important;
 }
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover > .submenu {

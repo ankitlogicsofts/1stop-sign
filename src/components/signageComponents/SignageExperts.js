@@ -4,7 +4,7 @@ import { Container, Typography, Box, Grid, Skeleton } from "@mui/material";
 const SignageExperts = ({ data, loading }) => {
   return (
     <Box id="aboutInnerP" className="bg2">
-      <Container>
+      <Box className="container">
         <Grid container justifyContent="center">
           <Grid item xs={12}>
             <Box className="MainHead">
@@ -30,7 +30,7 @@ const SignageExperts = ({ data, loading }) => {
             )}
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };
