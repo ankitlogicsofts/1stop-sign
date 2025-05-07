@@ -1,7 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const page = () => {
+  const listItems = [
+    'Ensuring the website functions properly',
+    'Remembering your preferences',
+    'Improving site performance and usability',
+    'Tracking analytics to better understand visitor behavior',
+    'Delivering targeted advertisements',
+  ];
+  const listItems2 = [
+    'Essential cookies: Required for basic site functionality',
+    'Performance cookies: Help us understand how visitors interact with our site',
+    'Functionality cookies: Remember choices you’ve made to personalize your experience',
+    'Advertising cookies: Deliver advertisements more relevant to your interests',
+  ];
   return (
     <>
       <Box className="padM container policyWrp">
@@ -28,24 +43,29 @@ const page = () => {
         <Typography gutterBottom>
           We use cookies for various purposes including:
         </Typography>
-        <ul>
-          <li>Ensuring the website functions properly</li>
-          <li>Remembering your preferences</li>
-          <li>Improving site performance and usability</li>
-          <li>Tracking analytics to better understand visitor behavior</li>
-          <li>Delivering targeted advertisements</li>
-        </ul>
-
+        <List className="ListWrp">
+                        {listItems.map((text, index) => (
+                          <ListItem key={index} disableGutters>
+                            <ListItemIcon sx={{ minWidth: '30px', color: 'green' }}>
+                              <CheckCircleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={text} />
+                          </ListItem>
+                        ))}
+        </List>
         <Typography variant="h3" gutterBottom>
           Types of cookies we use
         </Typography>
-        <ul>
-          <li><strong>Essential cookies:</strong> Required for basic site functionality</li>
-          <li><strong>Performance cookies:</strong> Help us understand how visitors interact with our site</li>
-          <li><strong>Functionality cookies:</strong> Remember choices you’ve made to personalize your experience</li>
-          <li><strong>Advertising cookies:</strong> Deliver advertisements more relevant to your interests</li>
-        </ul>
-
+        <List className="ListWrp">
+                        {listItems2.map((text, index) => (
+                          <ListItem key={index} disableGutters>
+                            <ListItemIcon sx={{ minWidth: '30px', color: 'green' }}>
+                              <CheckCircleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={text} />
+                          </ListItem>
+                        ))}
+        </List>
         <Typography variant="h3" gutterBottom>
           Managing cookies
         </Typography>

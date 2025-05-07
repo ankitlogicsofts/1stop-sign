@@ -1,452 +1,631 @@
-@media(max-width: 1281px) {
-    .menu-item .arrow-icon {
-        border: none;
-        fill: #E41E26;
-        border-radius: 4px;
-        position: absolute;
-        top: 21px;
-        right: 0;
+@media (max-width: 1281px) {
+  .MainHero_content h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  #client_slider .slick-prev,
+  #client_slider .slick-next {
+    z-index: 9999;
+  }
+  #MainSlide {
+    max-width: 742px;
+  }
+  .MainHero {
+    .banner_btn {
+      margin-bottom: 0;
     }
+  }
+  section.sec_4.Contact textarea {
+    max-height: 108px;
+  }
+  .menu-item .arrow-icon {
+    border: none;
+    fill: #e41e26;
+    border-radius: 4px;
+    position: absolute;
+    top: 21px;
+    right: 0;
+  }
 
-    .navSection.closed .navBar {
-        display: none !important;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
+  .navSection.closed .navBar {
+    display: none !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .navSection.open .navBar {
-        display: flex !important;
-        transform: translateX(0);
-    }
+  .navSection.open .navBar {
+    display: flex !important;
+    transform: translateX(0);
+  }
 
+  #navSec {
+    .menu-item {
+      position: relative;
+      white-space: nowrap;
+      font-weight: 600;
+      width: 100%;
+      padding: 8px 0;
+      border-bottom: 1px solid #efefef;
+      display: block;
 
-    #navSec {
-        .menu-item {
-            position: relative;
-            white-space: nowrap;
-            font-weight: 600;
-            width: 100%;
-            padding: 8px 0;
-            border-bottom: 1px solid #efefef;
-            display: block;
-
-
-            &:hover>.dropdown {
-                position: static;
-                box-shadow: none;
-                background: #f1f1f1;
-            }
-        }
-
-        .navBar {
-            position: fixed;
-            display: flex;
-            flex-direction: column;
-            align-content: flex-start;
-            text-align: left;
-            background: #fff;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            padding: 15px;
-            z-index: 9;
-            justify-content: flex-start;
-            box-shadow: 0 1px 13px #00000066;
-            max-width: 58%;
-            width: 100%;
-            overflow: auto;
-            z-index: 99999;
-        }
-    }
-
-    .menuIcon {
-        display: flex !important;
-    }
-
-    .menu-item:hover .arrow-icon {
-        transform: rotate(0deg);
-    }
-
-    .navBar .menu-item .dropdown .dropdown-item .iconSubMenu {
-        position: absolute;
-        right: 2px;
-        top: 9px;
-        transform: rotate(90deg);
-    }
-
-    .navBar .menu-item .dropdown .dropdown-item:hover>.sub-dropdown {
+      &:hover > .dropdown {
         position: static;
+        box-shadow: none;
+        background: #f1f1f1;
+      }
     }
 
-    .navBar .menu-item .menu-link {
-        justify-content: space-between;
-        padding: 5px 0;
+    .navBar {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      text-align: left;
+      background: #fff;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      padding: 15px;
+      z-index: 9;
+      justify-content: flex-start;
+      box-shadow: 0 1px 13px #00000066;
+      max-width: 72%;
+      width: 100%;
+      overflow: auto;
+      z-index: 99999;
     }
+  }
 
-    .innerHeader {
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #ccc;
-        padding: 5px 15px 0;
-    }
+  .menuIcon {
+    display: flex !important;
+  }
 
-    .innerHeader {
-        display: flex;
-        justify-content: space-between;
-        border-top: 0px solid #ccc;
-        padding: 5px 15px 0;
-        width: 100%;
-    }
+  .menu-item:hover .arrow-icon {
+    transform: rotate(0deg);
+  }
 
-    .navBar .menu-item .menu-link {
-        justify-content: space-between;
-        padding: 5px 0;
-    }
+  .navBar .menu-item .dropdown .dropdown-item .iconSubMenu {
+    position: absolute;
+    right: 2px;
+    top: 9px;
+    transform: rotate(90deg);
+  }
 
-    #navSec .navBar div {
-        width: 100% !important;
-    }
+  .navBar .menu-item .dropdown .dropdown-item:hover > .sub-dropdown {
+    position: static;
+  }
 
-    #navSec .menu-item {
-        position: relative;
-        white-space: nowrap;
-        font-weight: 600;
-        width: 100%;
-        padding: 8px 0;
-        border-bottom: 1px solid #efefef;
-        display: block;
-    }
+  .navBar .menu-item .menu-link {
+    justify-content: space-between;
+    padding: 5px 0;
+  }
 
-    .container {
-        padding: 0 15px;
-    }
-}
+  .innerHeader {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    padding: 5px 15px 0;
+  }
 
-@media(min-width:1024px) {
-    .customizationOptions{
-        ul{
-            column-count: 2;
-        }
-    }
-    .twoColumn{
-            column-count: 2;
-    }
-}
-@media(max-width:1024px) {
-    .services .gridHead {
-        margin-bottom: 3em !important;
-        border: none;
-    }
+  .innerHeader {
+    display: flex;
+    justify-content: space-between;
+    border-top: 0px solid #ccc;
+    padding: 5px 15px 0;
+    width: 100%;
+  }
 
-    .services .slick-prev,
-    .services .slick-next {
-        top: -9% !important;
-    }
+  .navBar .menu-item .menu-link {
+    justify-content: space-between;
+    padding: 5px 0;
+  }
 
-    .services .slick-prev {
-        left: inherit !important;
-        right: 12% !important;
-    }
+  #navSec .navBar div {
+    width: 100% !important;
+  }
 
+  #navSec .menu-item {
+    position: relative;
+    white-space: nowrap;
+    font-weight: 600;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #efefef;
+    display: block;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+  .policyWrp {
+    padding: 2em 15px !important;
+  }
+  .policyWrp h2 {
+    font-size: 1.5rem;
+  }
+  .MainHero_content {
+    text-align: center;
+    h2 {
+      font-size: 20px;
+      padding: 0;
+    }
+    .banner_btn {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  #SignMakers {
+    .gridHead {
+      margin-top: 0;
+    }
     .gridCol.left {
-        width: 100%;
-        text-align: center;
+      width: 100%;
     }
-
-    video.ugb-video-preview {
-        padding: 0;
+    .slick-prev,
+    .slick-next {
+      top: -7% !important;
     }
-
-    #client_slider .slick-next {
-        left: 88% !important;
-        bottom: -17% !important;
+    .slick-prev {
+      right: 6% !important;
     }
-
-    #client_slider .slick-prev {
-        top: inherit !important;
-        left: 0 !important;
-        right: 7% !important;
-        bottom: -17% !important;
+    .GridBox {
+      max-height: 445px;
     }
-
-    #client_slider .slick-track {
-        column-gap: 0;
+  }
+  #PerfectSign {
+    .gridHead {
+      margin-top: 0;
+      text-align: center;
     }
-
-    .conactBox {
-        padding: 15px 20px;
+    #PerfectSign h2 {
+      font-size: 30px;
     }
-
-    .conactBox {
-        background: #fff;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        margin-bottom: 0;
+    .BoxSign h3 {
+      color: #003366;
+      font-size: 20px;
     }
-
-    #client_slider .slick-dots {
-        margin-bottom: 21px !important;
-    }
-
-
+  }
+  .PerfectSignBoxWrp .BoxSign {
+    width: calc(30.8% - 14px);
+  }
+  .PerfectSignBoxWrp .BoxSign:nth-last-child(2),
+  .PerfectSignBoxWrp .BoxSign:last-child {
+    width: calc(46.49% - 4px);
+  }
 }
 
-@media(max-width:768px) {
-    .headerWrp .logo {
-        width: 100px;
+@media (min-width: 1024px) {
+  .customizationOptions {
+    ul {
+      column-count: 2;
     }
+  }
+  .twoColumn {
+    column-count: 2;
+  }
+}
+@media (max-width: 1024px) {
+  .services .gridHead {
+    margin-bottom: 3em !important;
+    border: none;
+  }
 
-    .headerWrp .menuIcon {
-        position: absolute;
-        right: 12px;
-        z-index: 99;
-        padding: 0;
-    }
+  .services .slick-prev,
+  .services .slick-next {
+    top: -9% !important;
+  }
 
-    .headerSec {
-        padding: 10px 0;
-    }
+  .services .slick-prev {
+    left: inherit !important;
+    right: 12% !important;
+  }
 
-    .MainHero {
-        text-align: center;
-        padding: 0 15px !important;
-    }
+  .gridCol.left {
+    width: 100%;
+    text-align: center;
+  }
 
-    .MainHero h2 {
-        padding: 0 !important;
-    }
+  video.ugb-video-preview {
+    padding: 0;
+  }
 
-    .MainHero_content .banner_btn {
-        margin: 20px 0 0;
-        display: flex;
-        column-gap: 10px;
-        justify-content: center;
-    }
+  #client_slider .slick-next {
+    left: 88% !important;
+    bottom: -17% !important;
+  }
 
-    .footer {
-        padding: 3em 0px !important;
-    }
+  #client_slider .slick-prev {
+    top: inherit !important;
+    left: 0 !important;
+    right: 7% !important;
+    bottom: -17% !important;
+  }
 
-    .footerMap iframe {
-        height: 220px;
-    }
+  #client_slider .slick-track {
+    column-gap: 0;
+  }
 
-    #TypesOfSignage .slick-slider .slick-prev,
-    #TypesOfSignage .slick-slider .slick-next {
-        font-size: 0;
-        line-height: 0;
-        position: absolute;
-        top: 240px !important;
-        z-index: 9;
-    }
+  .conactBox {
+    padding: 15px 20px;
+  }
 
-    #TypesOfSignage .slick-prev {
-        left: inherit !important;
-        right: inherit !important;
-        top: -15% !important;
-    }
+  .conactBox {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0;
+  }
 
-    #TypesOfSignage .desc {
-        text-align: center;
-    }
-
-    #TypesOfSignage .item {
-        height: auto !important;
-    }
-
-    #TypesOfSignage .GridBox {
-        height: 100% !important;
-    }
-
-    .PerfectSignBoxWrp {
-        flex-direction: column;
-    }
-
-    .PerfectSignBoxWrp .BoxSign {
-        width: calc(100% - 14px);
-    }
-
-    #PerfectSign .BoxSign h3 {
-        font-size: 26px;
-    }
-
-    .PerfectSignBoxWrp .BoxSign:nth-last-child(2),
-    .PerfectSignBoxWrp .BoxSign:last-child {
-        width: calc(100% - 10px);
-    }
-
-    #PerfectSign .GridWrap {
-        padding-bottom: 0;
-    }
-
-    section.sec_2.why.MuiBox-root {
-        padding: 3em 0;
-    }
-
-    section.faqSection {
-        padding: 3em 0;
-    }
-
-    #SignMakers .gridHead {
-        margin-top: 0;
-    }
-
-    #SignMakers .GridBox {
-        max-height: fit-content;
-    }
-
-    section#SignMakers .GridWrap .slick-prev,
-    section#SignMakers .GridWrap .slick-next {
-        top: 240px !important;
-        z-index: 9;
-    }
-
-    section#SignMakers .GridWrap .slick-prev {
-        left: inherit !important;
-        right: inherit !important;
-    }
-
-    section#SignMakers .GridWrap {
-        padding-bottom: 0;
-    }
-
-    #SignMakers .slick-track {
-        column-gap: 0;
-    }
-
-    #PerfectSign .gridHead {
-        margin-top: 0px;
-    }
-
-    #PerfectSign .gridHead h2 {
-        margin-top: 0;
-    }
-
-    #PerfectSign .gridCol {
-        text-align: center;
-    }
-
-    section.sec_3.ourWork.bg2 {
-        padding: 3em 0;
-    }
-
-    #SignMakers.SignsInLondon {
-        padding-top: 2.5em;
-        clear: both;
-    }
-
-    #IdealShop {
-        padding: 3em 0;
-    }
-
-    #IdealShop .contentArea:first-child {
-        padding-left: 8em;
-        padding-right: 3em;
-    }
-
-    #IdealShop .contentArea {
-        padding-right: 15px !important;
-        text-align: center;
-    }
-
-    #IdealShop .MuiGrid-container:last-child {
-        display: flex;
-        flex-direction: column-reverse;
-        margin-top: 2em;
-    }
-
-    #IdealShop .contentArea:first-child {
-        margin-bottom: 3em;
-    }
-
-    #IdealShop h2 {
-        font-size: 1.7rem;
-    }
-
-    #IdealShop .contentArea:last-child {
-        margin-bottom: 2em;
-    }
-
-    #IdealShop .contentArea:first-child {
-        padding-left: 3em;
-    }
-
-    section.MainHero {
-        border-bottom: 1px solid #d3e3f7;
-        padding: 1em 0 !important;
-    }
-
-    .MainHero_content h1 {
-        font-size: 2.3rem;
-        line-height: 42px;
-        margin-bottom: 14px;
-    }
-
-    #BlogSection .boxB {
-        margin-top: 0;
-    }
-
-    #BlogSection .boxBcontent {
-        text-align: center;
-    }
-
-    #BlogSection .boxB h3 {
-        margin-bottom: 10px;
-    }
-
-    #BlogSection .readMbtn {
-        margin-bottom: 20px;
-    }
-
-    #blogDetail h1 {
-        line-height: normal;
-        font-size: 23px;
-        margin-bottom: 20px;
-    }
-
-    ul.breadcrumb {
-        display: inline-block;
-    }
-
-    ul.breadcrumb li {
-        font-size: 14px;
-    }
-
-    #blogDetail h1,
-    #blogDetail h2,
-    #blogDetail h3,
-    #blogDetail h4,
-    #blogDetail h5,
-    #blogDetail h6 {
-        line-height: normal;
-    }
-
-    #MainSlide {
-        max-width: 350px;
-        margin: 0 auto;
-    }
+  #client_slider .slick-dots {
+    margin-bottom: 21px !important;
+  }
 }
 
-@media(min-width:1600px) {
-    .container {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+@media (max-width: 768px) {
+  .headerWrp .logo {
+    width: 100px;
+  }
 
-    body {
-        font-size: 20px;
-    }
+  .headerWrp .menuIcon {
+    position: absolute;
+    right: 12px;
+    z-index: 99;
+    padding: 0;
+  }
 
-    .navBar .menu-item .menu-link {
-        font-size: 18px;
-    }
+  .headerSec {
+    padding: 10px 0;
+  }
 
-    #heroWrp .heroLeftSec .titleName {
-        font-size: 42px;
-    }
+  .MainHero {
+    text-align: center;
+    padding: 0 15px !important;
+  }
 
-    .Contact .contInfo {
-        font-size: 17px;
+  .MainHero h2 {
+    padding: 0 !important;
+  }
+
+  .MainHero_content .banner_btn {
+    margin: 20px 0 0;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 3em 0px !important;
+  }
+
+  .footerMap iframe {
+    height: 220px;
+  }
+
+  #TypesOfSignage .slick-slider .slick-prev,
+  #TypesOfSignage .slick-slider .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 240px !important;
+    z-index: 9;
+  }
+
+  #TypesOfSignage .slick-prev {
+    left: inherit !important;
+    right: inherit !important;
+    top: -15% !important;
+  }
+
+  #TypesOfSignage .desc {
+    text-align: center;
+  }
+
+  #TypesOfSignage .item {
+    height: auto !important;
+  }
+
+  #TypesOfSignage .GridBox {
+    height: 100% !important;
+  }
+
+  .PerfectSignBoxWrp {
+    flex-direction: column;
+  }
+
+  .PerfectSignBoxWrp .BoxSign {
+    width: calc(100% - 14px);
+  }
+
+  #PerfectSign .BoxSign h3 {
+    font-size: 26px;
+  }
+
+  .PerfectSignBoxWrp .BoxSign:nth-last-child(2),
+  .PerfectSignBoxWrp .BoxSign:last-child {
+    width: calc(100% - 10px);
+  }
+
+  #PerfectSign .GridWrap {
+    padding-bottom: 0;
+  }
+
+  section.sec_2.why.MuiBox-root {
+    padding: 2em 0;
+  }
+
+  section.faqSection {
+    padding: 3em 0;
+  }
+
+  #SignMakers .gridHead {
+    margin-top: 0;
+  }
+
+  #SignMakers .GridBox {
+    max-height: fit-content;
+  }
+
+  section#SignMakers .GridWrap .slick-prev,
+  section#SignMakers .GridWrap .slick-next {
+    top: 240px !important;
+    z-index: 9;
+  }
+
+  section#SignMakers .GridWrap .slick-prev {
+    left: inherit !important;
+    right: inherit !important;
+  }
+
+  section#SignMakers .GridWrap {
+    padding-bottom: 0;
+  }
+
+  #SignMakers .slick-track {
+    column-gap: 0;
+  }
+
+  #PerfectSign .gridHead {
+    margin-top: 0px;
+  }
+
+  #PerfectSign .gridHead h2 {
+    margin-top: 0;
+  }
+
+  #PerfectSign .gridCol {
+    text-align: center;
+  }
+
+  #SignMakers.SignsInLondon {
+    padding-top: 2.5em;
+    clear: both;
+  }
+
+  #IdealShop {
+    padding: 3em 0;
+  }
+
+  #IdealShop .contentArea:first-child {
+    padding-left: 8em;
+    padding-right: 3em;
+  }
+
+  #IdealShop .contentArea {
+    padding-right: 15px !important;
+    text-align: center;
+  }
+
+  #IdealShop .MuiGrid-container:last-child {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 2em;
+  }
+
+  #IdealShop .contentArea:first-child {
+    margin-bottom: 3em;
+  }
+
+  #IdealShop h2 {
+    font-size: 1.7rem;
+  }
+
+  #IdealShop .contentArea:last-child {
+    margin-bottom: 2em;
+  }
+
+  #IdealShop .contentArea:first-child {
+    padding-left: 3em;
+  }
+
+  section.MainHero {
+    border-bottom: 1px solid #d3e3f7;
+    padding: 1em 0 !important;
+  }
+
+  .MainHero_content h1 {
+    font-size: 2.3rem;
+    line-height: 42px;
+    margin-bottom: 14px;
+  }
+
+  #BlogSection .boxB {
+    margin-top: 0;
+  }
+
+  #BlogSection .boxBcontent {
+    text-align: center;
+  }
+
+  #BlogSection .boxB h3 {
+    margin-bottom: 10px;
+  }
+
+  #BlogSection .readMbtn {
+    margin-bottom: 20px;
+  }
+
+  #blogDetail h1 {
+    line-height: normal;
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+
+  ul.breadcrumb {
+    display: inline-block;
+  }
+
+  ul.breadcrumb li {
+    font-size: 14px;
+  }
+
+  #blogDetail h1,
+  #blogDetail h2,
+  #blogDetail h3,
+  #blogDetail h4,
+  #blogDetail h5,
+  #blogDetail h6 {
+    line-height: normal;
+  }
+
+  #MainSlide {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  section.sec_1.services.MuiBox-root.css-0 {
+    .custom-slider .slick-track {
+      display: flex;
+      column-gap: 0px;
     }
+  }
+  .MainHero {
+    .MuiGrid-container {
+      justify-content: center;
+    }
+  }
+  .MainHero_content h1 {
+    font-size: 1.8rem;
+    line-height: 38px;
+    margin-bottom: 14px;
+  }
+  .innerHeader {
+    padding: 0;
+  }
+  section.sec_3.ourWork {
+    padding: 3em 0;
+  }
+  .MainHead h2 {
+    font-size: 32px;
+  }
+  section.sec_4.Contact textarea {
+    max-height: 100px;
+  }
+  section.sec_4.Contact .conactBox {
+    padding-bottom: 2em;
+  }
+  .conactBox.col02.MuiBox-root.css-0 {
+    margin-top: 2em;
+  }
+  .imgIcon {
+    margin: 0 !important;
+  }
+  .imgIcon img {
+    width: 33px;
+  }
+  .trustBox.Rapid .imgIcon img {
+    width: 40px;
+  }
+  .custom-slider .slick-list {
+    margin: 0 0px;
+  }
+  #MainSlide {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+  #aboutInnerP {
+    padding: 2em 0;
+  }
+  .CategoryWrp {
+    padding: 2em 0 !important;
+  }
+  .padM {
+    padding: 2em 0;
+  }
+  #TypesOfSignage {
+    padding-bottom: 3em !important;
+  }
+  #SignMakers .GridBox .desc h3 {
+    text-align: center;
+  }
+  #PerfectSign .PerfectSignBoxWrp .BoxSign {
+    width: calc(100% - 18px);
+  }
+  #SignMakers.SignsInLondon .MainHead h2 {
+    font-size: 24px;
+  }
+  #SignMakers.SignsInLondon {
+    border-top: 1px solid #eaeaea;
+  }
+  section#IdealShop {
+    padding-top: 2em;
+  }
+  section.section.ourClients {
+    .MainHead h2 {
+      font-size: 30px;
+    }
+  }
+  div#suBpageWrp {
+    text-align: center;
+    .MainHead h2 {
+      text-align: center;
+    }
+  }
+  #ExceptionalCustomer h2 {
+    font-size: 32px;
+  }
+  #ExceptionalCustomer {
+    padding: 2em 0;
+  }
+  section.sec_4.Contact .conactBox {
+    padding: 2em 15px;
+    h3 {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+}
+@media only screen and (max-width: 380px) {
+  .trustBox h3 {
+    font-size: 14px;
+  }
+  .MainHero_content h1 {
+    font-size: 1.6rem;
+    line-height: 38px;
+  }
+  #MainSlide {
+    max-width: 317px;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .navBar .menu-item .menu-link {
+    font-size: 18px;
+  }
+
+  #heroWrp .heroLeftSec .titleName {
+    font-size: 42px;
+  }
+
+  .Contact .contInfo {
+    font-size: 17px;
+  }
 }

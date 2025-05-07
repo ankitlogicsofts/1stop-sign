@@ -63,7 +63,7 @@ const page = () => {
                             <ListItemText primary={text} />
                           </ListItem>
                         ))}
-                      </List>
+        </List>
       <Typography>We review our retention periods for personal information on a regular basis. We are legally required to hold some types of information to fulfil our statutory obligations. We will hold your personal information on our systems for as long as is necessary for the relevant activity, or as long as is set out in any relevant contract you hold with us.</Typography>                
       <Typography variant="h2">Who has access to your information?</Typography>
       <Typography>We will not sell or rent your information to third parties.</Typography>

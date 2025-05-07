@@ -793,6 +793,7 @@ body {
 #quotePopup {
   .MuiStack-root {
     padding-top: 0;
+    overflow: visible;
   }
 }
 .subTitle {
@@ -891,53 +892,57 @@ body {
   }
 }
 .twoColumn li {
-    color: #000;
+  color: #000;
 }
 .footMenu {
-    li{
-        border: none;
-    }
+  li {
+    border: none;
+  }
 }
-.policyWrp{
-    clear: both;
-    max-width: 1100px !important;
-    color: #003366;
-    p{
-        margin-top: .5em;
-        margin-bottom: .5em;
+.policyWrp {
+  clear: both;
+  max-width: 1100px !important;
+  color: #003366;
+  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  a {
+    font-weight: 600;
+    &:hover {
+      // color: #52a42d;
+      text-decoration: underline;
     }
-    a{
-        font-weight: 600;
-    }
-    h2{
-        font-size: 1.8rem;
-        font-weight: 600;
-    }
-    h3{
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    h4{
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-    h4{
-        font-size: 1.1rem;
-        font-weight: 600;
-    }
-    h5{
-        font-size: 1rem;
-        font-weight: 600;
-    }
-    h6{
-        font-size: 1rem;
-        font-weight: 600;
-    }
-    .ListWrp li{
-      color:#4d4a4a;
-    }
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .ListWrp li {
+    color: #4d4a4a;
+  }
 }
-#errorPage{
+#errorPage {
   padding-top: 5em;
   border: none;
   h1 {
@@ -946,5 +951,5 @@ body {
   }
   .common_btn.book_btn {
     background: #003366;
-}
+  }
 }
