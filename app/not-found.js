@@ -12,7 +12,7 @@ const Notfound = () => {
   };
 
   return (
-    <Box className={style.errorWrp}>
+    <Box className={style.errorWrp} style={{clear:"both"}} id="errorPage">
       <Box className="container">
         <Typography variant="h1" className={`${style.errorTitle} heading`}>
           <span>404</span>
@@ -25,14 +25,16 @@ const Notfound = () => {
           You either tried some shady route or you came here by mistake.
           Whichever it is, try using the navigation.
         </Typography>
+        <Box id="IdealShop" mt={4}>
         <Button
           variant="contained"
           color="primary"
           onClick={handleBackToHome}
-          className={style.backButton}
+          className="common_btn book_btn"
         >
           Back to Home
         </Button>
+        </Box>
       </Box>
     </Box>
   );

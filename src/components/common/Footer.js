@@ -81,21 +81,23 @@ const Footer = ({ footerItems, data }) => {
                   <Typography variant="h3" gutterBottom>
                     Legal Links
                   </Typography>
-                  <ul style={{ listStyle: "none", padding: 0 }}>
-                    {[
-                      "Privacy Policy",
-                      "Terms & Conditions",
-                      "Delivery Information",
-                      "Returns Policy",
-                      "Cookie Policy",
-                    ].map((text) => (
-                      <li key={text}>
-                        <Link href="#" underline="hover">
-                          {text}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+
+<ul style={{ listStyle: "none", padding: 0 }}>
+  {[
+    { text: "Privacy Policy", href: "/privacy-policy" },
+    { text: "Terms & Conditions", href: "/terms-conditions" },
+    { text: "Delivery Information", href: "/delivery-information" },
+    { text: "Returns Policy", href: "/returns-policy" },
+    { text: "Cookie Policy", href: "/cookie-policy" },
+  ].map(({ text, href }) => (
+    <li key={text}>
+      <Link href={href}>
+        {text}
+      </Link>
+    </li>
+  ))}
+</ul>
+
                 </Box>
               </Grid>
 

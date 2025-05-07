@@ -122,6 +122,16 @@
     }
 }
 
+@media(min-width:1024px) {
+    .customizationOptions{
+        ul{
+            column-count: 2;
+        }
+    }
+    .twoColumn{
+            column-count: 2;
+    }
+}
 @media(max-width:1024px) {
     .services .gridHead {
         margin-bottom: 3em !important;

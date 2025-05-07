@@ -75,7 +75,7 @@ const OurCompetitive = () => {
           </Typography>
         </Box>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={7}>
             <Box className="QueryForm_left">
               <List>
                 {listItems.map((text, index) => (
@@ -93,7 +93,7 @@ const OurCompetitive = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={5}>
             {open && (
               <Box sx={{ p: 2, border: '1px solid #ccc', borderRadius: 2 }} className="popup-form-overlay">
                 <Box className="topArea" display="flex" justifyContent="space-between" alignItems="center">
@@ -122,7 +122,7 @@ const OurCompetitive = () => {
                   }) => (
                     <Form>
                       <Grid container spacing={2}>
-                        <Grid item xs={12} sm={12}>
+                        <Grid item xs={12} sm={6}>
                           <TextField
                             fullWidth
                             name="name"
@@ -136,7 +136,7 @@ const OurCompetitive = () => {
                             helperText={touched.name && errors.name}
                           />
                         </Grid>
-                        <Grid item xs={12} sm={12}>
+                        <Grid item xs={12} sm={6}>
                           <TextField
                             fullWidth
                             name="email"
@@ -165,7 +165,23 @@ const OurCompetitive = () => {
                           />
                         </Grid>
 
-                       
+                       {/* ✅ Textarea Field */}
+        <Grid item xs={12}>
+          <TextField
+            fullWidth
+            multiline
+            rows={2}
+            name="message"
+            label="Your Message"
+            variant="outlined"
+            placeholder="Type your message here..."
+            value={values.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.message && Boolean(errors.message)}
+            helperText={touched.message && errors.message}
+          />
+        </Grid>
 
                         <Grid item xs={12} className="text-center">
                           <Button
