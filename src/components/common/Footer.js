@@ -113,7 +113,7 @@ const Footer = ({ footerItems, data }) => {
                     </li>
                     <li>
                       <a href={`tel:${data?.phone}`}>
-                        <i className="fa fa-phone"></i> 020 8168 0001
+                        <i className="fa fa-phone"></i>020 8168 0001
                       </a>
                     </li>
                     <li>
