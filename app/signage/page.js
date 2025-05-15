@@ -25,6 +25,10 @@ const Signage = () => {
 
   const [data, setData] = useState(null);
   const [faqs, setFaqs] = useState(null);
+  const [productTypes, setProductTypes] = useState(null);
+  const [whyChooseUs, setWhyChooseUs] = useState(null);
+  const [galleries, setGalleries] = useState(null);
+  const [ourFeatures, setOurFeatures] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,6 +40,10 @@ const Signage = () => {
         if (response) {
           setData(response);
           setFaqs(response?.faqs);
+          setProductTypes(response?.productTypes);
+          setWhyChooseUs(response?.whychooseus);
+          setGalleries(response?.galleries);
+          setOurFeatures(response?.ourFeatures);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -52,11 +60,11 @@ const Signage = () => {
       <HeroSection />
       <TrustValueProps />
       <SignageExperts data={data} loading={loading} />
-      <OurGallery />
-      <TypesOfSignage />
-      <VehicleGraphics />
+      <OurGallery galleries={galleries} />
+      <TypesOfSignage productTypes={productTypes} />
+      <VehicleGraphics ourFeatures={ourFeatures} />
       <PerfectSign data={data} loading={loading} />
-      <WhyChooseUs />
+      <WhyChooseUs whyChooseUs={whyChooseUs} />
       <RecentWork />
       <FaqSection faqs={faqs} loading={loading} />
       <CallToAction />

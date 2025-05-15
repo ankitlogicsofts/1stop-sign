@@ -5,27 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { GetGallery } from "@/lib/api/api";
 
-const OurGallery = () => {
-  const [galleries, setGalleries] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchGalleryPage = async () => {
-      try {
-        const response = await GetGallery();
-        if (response) {
-          setGalleries(response?.galleries);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGalleryPage();
-  }, []);
-
+const OurGallery = ({ galleries }) => {
+  const loading = !galleries;
   return (
     <Box py={6} className="CategoryWrp">
       <Box className="container">
@@ -38,7 +19,7 @@ const OurGallery = () => {
               style={{ margin: "0 auto" }}
             />
           ) : (
-            <Typography variant="h2">{galleries?.title}</Typography>
+            <Typography variant="h2">Our Gallery</Typography>
           )}
         </Box>
         <Grid container spacing={2} mt={2}>
