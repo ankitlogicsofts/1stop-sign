@@ -12,24 +12,32 @@ import { GetProductData } from "@/lib/api/api";
 import TrustValueProps from "@/src/components/TrustValueProps";
 
 const page = ({ params }) => {
-  const { slug } = params;
-  const [data, setData] = useState(null);
-  const [faqs, setFaqs] = useState(null);
+  const { slug } = use(params);
   const [loading, setLoading] = useState(true);
 
+  const [data, setData] = useState(null);
+  const [faqs, setFaqs] = useState(null);
+  const [productTypes, setProductTypes] = useState(null);
+  const [whyChooseUs, setWhyChooseUs] = useState(null);
+  const [galleries, setGalleries] = useState(null);
+  const [ourFeatures, setOurFeatures] = useState(null);
+
   useEffect(() => {
+    if (!slug) return;
+
     const fetchProductData = async () => {
       try {
         const response = await GetProductData(slug);
         if (response) {
           setData(response);
           setFaqs(response?.faqs);
-        } else {
-          notFound();
+          setProductTypes(response?.productTypes);
+          setWhyChooseUs(response?.whychooseus);
+          setGalleries(response?.galleries);
+          setOurFeatures(response?.ourFeatures);
         }
       } catch (error) {
-        console.error("Error fetching blog:", error);
-        notFound();
+        console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }
@@ -41,8 +49,8 @@ const page = ({ params }) => {
     <>
       <HeroSection />
       <TrustValueProps />
-      <SignsInLondon />
-      <WhyChooseUs />
+      <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
+      <WhyChooseUs whyChooseUs={whyChooseUs} />
       <IdealShop />
       <Testimonials />
       <FaqSection faqs={faqs} loading={loading} />

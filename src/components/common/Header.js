@@ -66,10 +66,20 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, [router.asPath]);
 
+  // const logoanimationProps = {
+  //   initial: { opacity: 0, x: "-100vw" },
+  //   animate: { opacity: 1, x: 0 },
+  //   exit: { opacity: 0, x: "-100vw" },
+  //   transition: {
+  //     duration: 1.2,
+  //     ease: [0.25, 0.8, 0.25, 1],
+  //   },
+  // };
+
   const logoanimationProps = {
-    initial: { opacity: 0, x: "-100vw" },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: "-100vw" },
+    initial: { opacity: 0, y: "-100vh" }, // Start from above the viewport
+    animate: { opacity: 1, y: 0 }, // Move to normal position
+    exit: { opacity: 0, y: "-100vh" }, // Exit going back up
     transition: {
       duration: 1.2,
       ease: [0.25, 0.8, 0.25, 1],
@@ -148,7 +158,7 @@ const Header = () => {
                     {isLoading ? (
                       <Skeleton
                         variant="rectangle"
-                        width={164}
+                        width={160}
                         height={64}
                         className="logo"
                         animation="wave"

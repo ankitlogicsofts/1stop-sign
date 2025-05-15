@@ -101,7 +101,13 @@ const Page = ({ params }) => {
         </ul>
 
         <Box className="blog">
-          {blogDetail?.contentSections?.map((section, index) => (
+          <Typography
+            variant="body"
+            dangerouslySetInnerHTML={{
+              __html: blogDetail?.data?.content,
+            }}
+          />
+          {/* {blogDetail?.contentSections?.map((section, index) => (
             <Box key={index}>
               <Typography
                 variant="h2"
@@ -116,7 +122,7 @@ const Page = ({ params }) => {
                 }}
               />
             </Box>
-          ))}
+          ))} */}
         </Box>
       </Box>
     </section>

@@ -12,7 +12,7 @@
       "children": [
         {
           "name": "Signage & Displays",
-          "link": "signage",
+          "link": "/signage",
           "type": "page",
           "children": [
             {
@@ -26,7 +26,7 @@
               "type": "page"
             },
             {
-              "name": "Product Name",
+              "name": "Product Name1",
               "link": "#",
               "type": "page"
             }
@@ -39,7 +39,7 @@
           "children": [
             {
               "name": "Shop Front Signs",
-              "link": "shop-front-signs",
+              "link": "/shop-front-signs",
               "type": "page"
             },
             {
@@ -66,7 +66,7 @@
           "children": [
             {
               "name": "Shop Front Signs",
-              "link": "shop-front-signs",
+              "link": "/shop-front-signs",
               "type": "page"
             },
             {
@@ -75,12 +75,12 @@
               "type": "page"
             },
             {
-              "name": "Product Name",
+              "name": "Product Name1",
               "link": "#",
               "type": "page"
             },
             {
-              "name": "Product Name",
+              "name": "Product Name2",
               "link": "#",
               "type": "page"
             }
@@ -93,7 +93,7 @@
           "children": [
             {
               "name": "Shop Front Signs",
-              "link": "shop-front-signs",
+              "link": "/shop-front-signs",
               "type": "page"
             },
             {
@@ -102,12 +102,12 @@
               "type": "page"
             },
             {
-              "name": "Product Name",
+              "name": "Product Name1",
               "link": "#",
               "type": "page"
             },
             {
-              "name": "Product Name",
+              "name": "Product Name2",
               "link": "#",
               "type": "page"
             }
@@ -117,7 +117,7 @@
     },
     {
       "name": "Services",
-      "link": "services",
+      "link": "/services",
       "type": "page",
       "children": [
         {
@@ -149,22 +149,22 @@
     },
     {
       "name": "Latest Work",
-      "link": "latest-work",
+      "link": "/latest-work",
       "type": "page"
     },
     {
       "name": "FAQ",
-      "link": "faq",
+      "link": "/faq",
       "type": "page"
     },
     {
       "name": "Blog",
-      "link": "blog",
+      "link": "/blog",
       "type": "page"
     },
     {
       "name": "Contact Us",
-      "link": "contact-us",
+      "link": "/contact-us",
       "type": "page"
     }
   ]
