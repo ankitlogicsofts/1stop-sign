@@ -58,7 +58,13 @@ const OurServices = () => {
       <Box className="container">
         <Box className="MainHead" textAlign="center" mb={4}>
           <Typography variant="h2">{ourService?.main_heading}</Typography>
-          <Typography variant="body1">{ourService?.sub_heading}</Typography>
+          {/* <Typography variant="body1">{ourService?.sub_heading}</Typography> */}
+          <Typography
+            variant="body1"
+            dangerouslySetInnerHTML={{
+              __html: ourService?.sub_heading,
+            }}
+          />
         </Box>
 
         {serviceLists?.map((section, index) => (
