@@ -37,10 +37,7 @@ const BlogSection = () => {
         setBlogs((prev) => [...prev, ...response.data.fields]);
         setTotalBlogs(response.data.total);
 
-        const totalPages = response.data.total_pages;
-        if (page >= totalPages) {
-          setHasMore(false);
-        }
+        const totalPages = Math.ceil(response.data.total / perPage);
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -54,24 +51,29 @@ const BlogSection = () => {
     fetchBlogs();
   }, [page]);
 
-  // Handle scroll to bottom
   useEffect(() => {
+    let timeout;
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const offsetHeight = document.documentElement.offsetHeight;
-      const windowHeight = window.innerHeight;
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const scrollTop = window.scrollY;
+        const offsetHeight = document.documentElement.offsetHeight;
+        const windowHeight = window.innerHeight;
 
-      if (
-        scrollTop + windowHeight >= offsetHeight - 100 &&
-        blogs.length < totalBlogs
-      ) {
-        setPage((prev) => prev + 1);
-      }
+        if (
+          scrollTop + windowHeight >= offsetHeight - 100 &&
+          blogs.length < totalBlogs &&
+          hasMore &&
+          !loading
+        ) {
+          setPage((prev) => prev + 1);
+        }
+      }, 200);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [blogs, totalBlogs]);
+  }, [blogs, totalBlogs, hasMore, loading]);
 
   const getPlainPreview = (html, limit = 150) => {
     const tempElement = document.createElement("div");

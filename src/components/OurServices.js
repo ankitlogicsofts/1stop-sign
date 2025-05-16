@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { Margin } from "@mui/icons-material";
 import { Services } from "../../lib/api/api";
+import Link from "next/link";
 
 const settings = {
   dots: false,
@@ -41,7 +42,7 @@ const OurServices = () => {
         const response = await Services();
         if (response) {
           setOurService(response);
-          setServiceLists(response?.our_services);
+          setServiceLists(response?.data);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -65,41 +66,41 @@ const OurServices = () => {
             <Box className="gridHead">
               <Box className="gridCol left">
                 <Typography variant="h3" mb={1}>
-                  {section.type_of_service}
+                  {section.name}
                 </Typography>
                 <Typography variant="body2" mb={2}>
-                  {section.service_subheading}
+                  {section.description}
                 </Typography>
               </Box>
             </Box>
 
             <Slider {...settings} className="custom-slider">
-              {section.lists.map((item, i) => (
+              {section.services.map((item, i) => (
                 <Box key={i} className="item">
                   <Box className="GridBox">
                     <Box className="img">
-                      <a href="#">
+                      <Link href={`/services/${item.slug}`}>
                         <Image
-                          src={item.service_image}
-                          alt={item.service_name}
+                          src={item.image}
+                          alt={item.title}
                           width={600}
                           height={400}
                           style={{ width: "100%", height: "auto" }}
                         />
-                      </a>
+                      </Link>
                     </Box>
                     <Box className="desc">
                       <Typography variant="h6">
-                        <a href="#">{item.service_name}</a>
+                        <Link href={`/services/${item.slug}`}>
+                          {item.title}
+                        </Link>
                       </Typography>
-                      <Typography variant="body2">
-                        {item.service_description}
-                      </Typography>
+                      <Typography variant="body2">{item.content}</Typography>
                       <Box className="Explore" mt={1}>
-                        <a href="#">
-                          Explore More{" "}
+                        <Link href={`/services/${item.slug}`}>
+                          Explore More
                           <i className="fa-solid fa-arrow-right"></i>
-                        </a>
+                        </Link>
                       </Box>
                     </Box>
                   </Box>
