@@ -30,6 +30,8 @@ const page = ({ params }) => {
   const [sections3, setSections3] = useState(null);
   const [customizationSections, setCustomizationSections] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [testimonialData, setTestimonialData] = useState(null);
+  const [faqs, setFaqs] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -42,6 +44,8 @@ const page = ({ params }) => {
           setSections3(response?.section3);
           setCustomizationSections(response?.customization_section);
           setSections(response?.sections);
+          setTestimonialData(response?.testimonials);
+          setFaqs(response?.faqs);
         } else {
           notFound();
         }
@@ -56,7 +60,7 @@ const page = ({ params }) => {
     fetchBlog();
   }, [slug]);
 
-  console.log(sections3);
+  console.log(sections);
 
   const listItems = [
     "Experienced in-house graphic designers that can create eye-catching graphics to attract everyone in the room",
@@ -148,49 +152,34 @@ const page = ({ params }) => {
             <Grid container spacing={4} style={{ alignItems: "center" }}>
               <Grid item xs={12} sm={6}>
                 <Box className="contentSec">
-                  <List className="ListWrp">
-                    {sections2?.provide_services.map((text, index) => (
-                      <ListItem key={index} disableGutters>
-                        <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
-                          <CheckCircleIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={text?.provide_service} />
-                      </ListItem>
-                    ))}
-                  </List>
+                  {sections2?.provide_services?.length > 0 && (
+                    <List className="ListWrp">
+                      {sections2.provide_services.map((text, index) => (
+                        <ListItem key={index} disableGutters>
+                          <ListItemIcon
+                            sx={{ minWidth: "30px", color: "green" }}
+                          >
+                            <CheckCircleIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={text?.provide_service} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  )}
+
                   <Typography
                     variant="body"
                     dangerouslySetInnerHTML={{
                       __html: sections2?.service_content,
                     }}
                   />
-                  {/* <Typography>
-                    We have a client retention rate of 93% because we provide
-                    excellent exhibition displays for all types of events and
-                    exhibitions. An exhibition investment pays off when you
-                    choose an experienced signage expert, and 1 Stop Sign is
-                    exactly that.
-                  </Typography>
-                  <Typography>
-                    We offer 24-hour service for all customers and have the
-                    capacity to handle any last-minute requests for graphic
-                    productions. We provide an impressive structure for graphic
-                    development that ensures you can display your unique design
-                    concept without any hindrance.
-                  </Typography>
-                  <Typography>
-                    You can get in touch and see how we can create an exhibition
-                    display of your custom designs. Feel free to come into our
-                    shop to enjoy a firsthand experience of our unique
-                    techniques that create visually impactful displays.
-                  </Typography> */}
                 </Box>
               </Grid>
 
               <Grid item xs={12} sm={6}>
                 <img
                   src={sections2?.display_image}
-                  alt="Shop Signage"
+                  alt="Shop sSignage"
                   style={{
                     width: "100%",
                     height: "auto",
@@ -202,110 +191,130 @@ const page = ({ params }) => {
             </Grid>
           </Box>
         </Box>
-
-        <Box className="bg2 mb-0 padM" id="PopUpDisplay">
-          <Box className="container">
-            <Grid container spacing={4} style={{ alignItems: "center" }}>
-              <Grid item xs={12} sm={6}>
-                <img
-                  src={sections3?.display_image}
-                  alt="Shop Signage"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "5px",
-                    objectFit: "cover",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Box className="MainHead" style={{ maxWidth: "100%" }}>
-                  <Typography
-                    variant="h2"
-                    marginBottom={".3em"}
-                    textAlign={"left"}
-                  >
-                    {sections3?.why_you_choose_heading}
-                  </Typography>
-                </Box>
-                <Box className="contentSec">
-                  <Typography
-                    variant="body"
-                    dangerouslySetInnerHTML={{
-                      __html: sections3?.service_content,
+        {sections3?.provide_services?.length > 0 && (
+          <Box className="bg2 mb-0 padM" id="PopUpDisplay">
+            <Box className="container">
+              <Grid container spacing={4} style={{ alignItems: "center" }}>
+                <Grid item xs={12} sm={6}>
+                  <img
+                    src={sections3?.display_image}
+                    alt="Shop Signage"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      borderRadius: "5px",
+                      objectFit: "cover",
                     }}
                   />
-                  <Typography variant="h3">
-                    Why should you choose us?
-                  </Typography>
-                  <List className="ListWrp">
-                    {sections3?.provide_services.map((text, index) => (
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Box className="MainHead" style={{ maxWidth: "100%" }}>
+                    <Typography
+                      variant="h2"
+                      marginBottom={".3em"}
+                      textAlign={"left"}
+                    >
+                      {sections3?.why_you_choose_heading}
+                    </Typography>
+                  </Box>
+                  <Box className="contentSec">
+                    <Typography
+                      variant="body"
+                      dangerouslySetInnerHTML={{
+                        __html: sections3?.service_content,
+                      }}
+                    />
+                    {sections3?.provide_services?.length > 0 && (
+                      <Typography variant="h3">
+                        Why should you choose us?
+                      </Typography>
+                    )}
+
+                    <List className="ListWrp">
+                      {/* {sections3?.provide_services.map((text, index) => (
                       <ListItem key={index} disableGutters>
                         <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
                           <CheckCircleIcon />
                         </ListItemIcon>
                         <ListItemText primary={text?.provide_service} />
                       </ListItem>
-                    ))}
-                  </List>
-                </Box>
+                    ))} */}
+
+                      {sections3?.provide_services?.length > 0 && (
+                        <List className="ListWrp">
+                          {sections3.provide_services.map((text, index) => (
+                            <ListItem key={index} disableGutters>
+                              <ListItemIcon
+                                sx={{ minWidth: "30px", color: "green" }}
+                              >
+                                <CheckCircleIcon />
+                              </ListItemIcon>
+                              <ListItemText primary={text?.provide_service} />
+                            </ListItem>
+                          ))}
+                        </List>
+                      )}
+                    </List>
+                  </Box>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-        </Box>
-
-        <section
-          className="padM customizationOptions"
-          id="ExperienceServicesSec"
-        >
-          <Box
-            className="background-overlay"
-            sx={{
-              // backgroundImage:
-              //   'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")',
-              backgroundImage: `${
-                customizationSections?.customization_background_image
-                  ? customizationSections?.customization_background_image
-                  : 'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")'
-              }`,
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              opacity: 0.4,
-              mixBlendMode: "overlay",
-              transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
-              position: "absolute",
-              height: "100%",
-              width: "100%",
-              top: 0,
-              left: 0,
-              zIndex: 111,
-            }}
-          />
-
-          <Box className="container">
-            <Box className="MainHead">
-              <Typography variant="h2">
-                {customizationSections?.customization_heading}
-              </Typography>
             </Box>
-            <Typography>
-              {customizationSections?.customization_content}
-            </Typography>
-            <List className="ListWrp">
-              {customizationSections?.customization_options?.map(
-                (text, index) => (
-                  <ListItem key={index} disableGutters>
-                    <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
-                      <CheckCircleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary={text?.customization_option} />
-                  </ListItem>
-                )
-              )}
-            </List>
           </Box>
-        </section>
+        )}
+        {customizationSections?.length > 0 && (
+          <section
+            className="padM customizationOptions"
+            id="ExperienceServicesSec"
+          >
+            <Box
+              className="background-overlay"
+              sx={{
+                // backgroundImage:
+                //   'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")',
+                backgroundImage: `${
+                  customizationSections?.customization_background_image
+                    ? customizationSections?.customization_background_image
+                    : 'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")'
+                }`,
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                opacity: 0.4,
+                mixBlendMode: "overlay",
+                transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                top: 0,
+                left: 0,
+                zIndex: 111,
+              }}
+            />
+
+            <Box className="container">
+              <Box className="MainHead">
+                <Typography variant="h2">
+                  {customizationSections?.customization_heading}
+                </Typography>
+              </Box>
+              <Typography>
+                {customizationSections?.customization_content}
+              </Typography>
+              <List className="ListWrp">
+                {customizationSections?.customization_options?.map(
+                  (text, index) => (
+                    <ListItem key={index} disableGutters>
+                      <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
+                        <CheckCircleIcon />
+                      </ListItemIcon>
+                      <ListItemText primary={text?.customization_option} />
+                    </ListItem>
+                  )
+                )}
+              </List>
+            </Box>
+          </section>
+        )}
 
         {/* <Box className="bg1 mb-0 padM" id="suBpageWrp">
           <Box className="container">
@@ -406,118 +415,126 @@ const page = ({ params }) => {
           </Box>
         </Box> */}
 
-        <Box className="bg1 mb-0 padM" id="suBpageWrp">
-          <Box className="container">
-            {sections?.map((section, index) => (
-              <Grid
-                container
-                spacing={4}
-                key={index}
-                style={{ alignItems: "center", marginBottom: "3rem" }}
-              >
-                {/* Image on LEFT */}
-                {section.image_position === "left" && (
-                  <Grid item xs={12} sm={6}>
-                    <img
-                      src={section.image}
-                      alt={section.heading}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        borderRadius: "5px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </Grid>
-                )}
-
-                <Grid item xs={12} sm={6}>
-                  <Box className="MainHead">
-                    <Typography
-                      variant="h2"
-                      marginBottom={".5em"}
-                      textAlign={"left"}
-                    >
-                      {section.heading}
-                    </Typography>
-                  </Box>
-                  <Box className="contentSec">
-                    {section.paragraphs.map((para, i) => (
-                      <Typography key={i}>{para}</Typography>
-                    ))}
-
-                    {section.sub_heading && (
-                      <Typography variant="h3">
-                        {section.sub_heading}
-                      </Typography>
+        {sections?.length > 0 && (
+          <>
+            <Box className="bg1 mb-0 padM" id="suBpageWrp">
+              <Box className="container">
+                {sections?.map((section, index) => (
+                  <Grid
+                    container
+                    spacing={4}
+                    key={index}
+                    style={{ alignItems: "center", marginBottom: "3rem" }}
+                  >
+                    {/* Image on LEFT */}
+                    {section.image_position === "left" && (
+                      <Grid item xs={12} sm={6}>
+                        <img
+                          src={section.image}
+                          alt={section.heading}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: "5px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Grid>
                     )}
 
-                    {section.list_items &&
-                      section.list_items.filter(Boolean).length > 0 && (
-                        <List className="ListWrp">
-                          {section.list_items.map((text, i) =>
-                            text ? (
-                              <ListItem key={i} disableGutters>
-                                <ListItemIcon
-                                  sx={{ minWidth: "30px", color: "green" }}
-                                >
-                                  <CheckCircleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                              </ListItem>
-                            ) : null
+                    <Grid item xs={12} sm={6}>
+                      <Box className="MainHead">
+                        <Typography
+                          variant="h2"
+                          marginBottom={".5em"}
+                          textAlign={"left"}
+                        >
+                          {section.heading}
+                        </Typography>
+                      </Box>
+                      <Box className="contentSec">
+                        {section.paragraphs.map((para, i) => (
+                          <Typography key={i}>{para}</Typography>
+                        ))}
+
+                        {section.sub_heading && (
+                          <Typography variant="h3">
+                            {section.sub_heading}
+                          </Typography>
+                        )}
+
+                        {section.list_items &&
+                          section.list_items.filter(Boolean).length > 0 && (
+                            <List className="ListWrp">
+                              {section.list_items.map((text, i) =>
+                                text ? (
+                                  <ListItem key={i} disableGutters>
+                                    <ListItemIcon
+                                      sx={{ minWidth: "30px", color: "green" }}
+                                    >
+                                      <CheckCircleIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} />
+                                  </ListItem>
+                                ) : null
+                              )}
+                            </List>
                           )}
-                        </List>
-                      )}
-                  </Box>
-                </Grid>
+                      </Box>
+                    </Grid>
 
-                {/* Image on RIGHT */}
-                {section.image_position === "right" && (
-                  <Grid item xs={12} sm={6}>
-                    <img
-                      src={section.image}
-                      alt={section.heading}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        borderRadius: "5px",
-                        objectFit: "cover",
-                      }}
-                    />
+                    {/* Image on RIGHT */}
+                    {section.image_position === "right" && (
+                      <Grid item xs={12} sm={6}>
+                        <img
+                          src={section.image}
+                          alt={section.heading}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: "5px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Grid>
+                    )}
                   </Grid>
-                )}
-              </Grid>
-            ))}
-          </Box>
-        </Box>
-
-        <Box className="padM" id="ExceptionalCustomer">
-          <Box className="container">
-            <Box className="MainHead">
-              <Typography variant="h2">
-                Why should you choose our expertise?
-              </Typography>
-              <Box className="contentSec">
-                <List className="ListWrp twoColumn">
-                  {listItems5.map((text, index) => (
-                    <ListItem key={index} disableGutters>
-                      <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
-                        <CheckCircleIcon />
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItem>
-                  ))}
-                </List>
+                ))}
               </Box>
             </Box>
-          </Box>
+            <Box className="padM" id="ExceptionalCustomer">
+              <Box className="container">
+                <Box className="MainHead">
+                  <Typography variant="h2">
+                    Why should you choose our expertise?
+                  </Typography>
+                  <Box className="contentSec">
+                    <List className="ListWrp twoColumn">
+                      {listItems5.map((text, index) => (
+                        <ListItem key={index} disableGutters>
+                          <ListItemIcon
+                            sx={{ minWidth: "30px", color: "green" }}
+                          >
+                            <CheckCircleIcon />
+                          </ListItemIcon>
+                          <ListItemText primary={text} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        )}
+      </Box>
+      {faqs?.length > 0 && <ServiceFaq faqs={faqs} />}
+
+      {testimonialData?.lists?.length > 0 && (
+        <Box className="padM">
+          <Testimonials testimonialData={testimonialData} />
         </Box>
-      </Box>
-      <ServiceFaq />
-      <Box className="padM">
-        <Testimonials />
-      </Box>
+      )}
     </>
   );
 };

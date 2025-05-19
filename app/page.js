@@ -13,6 +13,7 @@ export default function Home() {
   const [heroSection, setHeroSection] = useState(null);
   const [trustExperience, setTrustExperience] = useState(null);
   const [whyChooseUs, setWhyChooseUs] = useState(null);
+  const [testimonialData, setTestimonialData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Home() {
           setHeroSection(response?.herosection);
           setTrustExperience(response?.trustExperience);
           setWhyChooseUs(response?.whychooseus);
+          setTestimonialData(response?.testimonials);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -40,7 +42,7 @@ export default function Home() {
       <OurServices />
       <FeaturedWork />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
-      <Testimonials />
+      <Testimonials testimonialData={testimonialData} />
       <ContactUs />
     </>
   );

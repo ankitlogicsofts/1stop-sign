@@ -34,7 +34,7 @@
         },
         {
           "name": "Promotional Printing",
-          "link": "#",
+          "link": "promotional-printing",
           "type": "page",
           "children": [
             {
@@ -61,7 +61,7 @@
         },
         {
           "name": "Artwork",
-          "link": "#",
+          "link": "/artwork",
           "type": "page",
           "children": [
             {
@@ -88,7 +88,7 @@
         },
         {
           "name": "Beauty",
-          "link": "#",
+          "link": "/beauty",
           "type": "page",
           "children": [
             {
@@ -132,17 +132,17 @@
         },
         {
           "name": "CNC Cutting & Fabrication",
-          "link": "#",
+          "link": "/services/cnc-cutting-fabrication",
           "type": "page"
         },
         {
           "name": "Sign Installation",
-          "link": "#",
+          "link": "/services/installation",
           "type": "page"
         },
         {
           "name": "Mounting & Finishing",
-          "link": "#",
+          "link": "/services/mounting-finishing",
           "type": "page"
         }
       ]
