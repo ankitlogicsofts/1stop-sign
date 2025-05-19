@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import menuItems from "../../../menu.json";
 import { motion } from "framer-motion";
+import { GetMenus } from "@/lib/api/api";
 const Navbar = ({ setIsOpen }) => {
   const [openMenu, setOpenMenu] = useState(null); // Track open menu
   const [openSubMenu, setOpenSubMenu] = useState(null); // Track open submenu
@@ -31,6 +32,22 @@ const Navbar = ({ setIsOpen }) => {
   const handleLinkClick = () => {
     setIsOpen(false); // Close the menu
   };
+
+  const [menuItems, setMenuItems] = useState([]);
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const response = await GetMenus();
+        setMenuItems(response.header);
+      } catch (error) {
+        console.error("Error fetching menu:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMenu();
+  }, []);
 
   const items = menuItems.menuitems || [];
   // console.log(items);
