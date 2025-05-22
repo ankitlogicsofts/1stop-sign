@@ -104,11 +104,7 @@ const Navbar = ({ setIsOpen }) => {
                         >
                           {}
                           <Link
-                            href={
-                              item.link !== "/products/signage-displays"
-                                ? "#"
-                                : "signage"
-                            }
+                            href={item.link}
                             className="submenu-link"
                             onClick={handleLinkClick}
                           >
