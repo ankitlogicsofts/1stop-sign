@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box, Typography, Skeleton } from "@mui/material";
 
 const Testimonials = ({ testimonialData }) => {
+  console.log(testimonialData);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

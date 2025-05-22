@@ -19,6 +19,7 @@ import {
 import React, { useEffect, useState, use } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { getServiceBySlug } from "@/lib/api/api";
+import OurGallery from "@/src/components/signageComponents/OurGallery";
 
 const page = ({ params }) => {
   const { slug } = use(params);
@@ -31,6 +32,7 @@ const page = ({ params }) => {
   const [customizationSections, setCustomizationSections] = useState(null);
   const [loading, setLoading] = useState(true);
   const [testimonialData, setTestimonialData] = useState(null);
+  const [galleries, setGalleries] = useState(null);
   const [faqs, setFaqs] = useState(null);
 
   useEffect(() => {
@@ -46,6 +48,7 @@ const page = ({ params }) => {
           setSections(response?.sections);
           setTestimonialData(response?.testimonials);
           setFaqs(response?.faqs);
+          setGalleries(response);
         } else {
           notFound();
         }
@@ -59,41 +62,8 @@ const page = ({ params }) => {
 
     fetchBlog();
   }, [slug]);
+  console.log(customizationSections?.length);
 
-  console.log(sections);
-
-  const listItems = [
-    "Experienced in-house graphic designers that can create eye-catching graphics to attract everyone in the room",
-    "High-quality printing options with state of the art Hi-tech printers for large format print images.",
-    "Assistance and advice in finding and hiring the right exhibition display space to get maximum attention.",
-    "Seamless display, installation, and dismantling of exhibition displays on your behalf.",
-    "Our site supervisors ensure smooth execution of venue installation and dismantling.",
-    "One seamless display of gargantuan exhibition displays for one vibrant visual.",
-    "Affordable pricing for large exhibition bundles.",
-  ];
-
-  const listItems2 = [
-    "Unique, easy to install and dismantle pop up display signages.",
-    "Vibrant designs and constructions that you can use to feature product videos and promotional content.",
-    "Easy replacement of graphics for event changes or changes in promotional strategy at the last minute.",
-    "Affordable pricing for all types of pop up displays regardless of event type and location.",
-    "High-quality ink, lights and materials to place focus on the content of the display.",
-    "Simple dismantling of the display to allow for flexibility and movement during the event.",
-  ];
-  const listItems3 = [
-    "Choice of size: Your pop up is crucial. Therefore you have complete control over the customization. We can create small table-size pop-up displays or large ones.",
-    "Choice of shape and colour: We can create straight, curved, backlit and 3D pop-up displays. We can also create booths with hanging structures with poster backgrounds to capture maximum attention.",
-    "Choice of shape and colour: We can create straight, curved, backlit and 3D pop-up displays. We can also create booths with hanging structures with poster backgrounds to capture maximum attention.",
-    "Choice of lighting: Catch the eye of the entire room by integrating bright lights into the pop-up display that act as backlit hanging structures for your booth.",
-  ];
-  const listItems4 = [
-    "Flexible designing and printing options means you are in complete control of the banner.",
-    "Option to use fabric structures instead of plastic or cardboard for roll-up banners.",
-    "Fast printing service to accommodate last-minute requirements.",
-    "Availability of temporary stickers to cover any change in ideas or strategy.",
-    "Free size and shape control options for little trade stalls and open events.",
-    "Flexible pricing for all roll-up banners regardless of size and shape.",
-  ];
   const listItems5 = [
     "A team of in-house expert designers who have perfected the technique.",
     "Vibrant colour printing options to attract visitors to your promotional event.",
@@ -191,7 +161,9 @@ const page = ({ params }) => {
             </Grid>
           </Box>
         </Box>
-        {sections3?.provide_services?.length > 0 && (
+        {galleries?.images?.length > 0 && <OurGallery galleries={galleries} />}
+
+        {sections3?.service_content?.length > 0 && (
           <Box className="bg2 mb-0 padM" id="PopUpDisplay">
             <Box className="container">
               <Grid container spacing={4} style={{ alignItems: "center" }}>
@@ -261,60 +233,63 @@ const page = ({ params }) => {
             </Box>
           </Box>
         )}
-        {customizationSections?.length > 0 && (
-          <section
-            className="padM customizationOptions"
-            id="ExperienceServicesSec"
-          >
-            <Box
-              className="background-overlay"
-              sx={{
-                // backgroundImage:
-                //   'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")',
-                backgroundImage: `${
-                  customizationSections?.customization_background_image
-                    ? customizationSections?.customization_background_image
-                    : 'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")'
-                }`,
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                opacity: 0.4,
-                mixBlendMode: "overlay",
-                transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
-                position: "absolute",
-                height: "100%",
-                width: "100%",
-                top: 0,
-                left: 0,
-                zIndex: 111,
-              }}
-            />
+        {customizationSections &&
+          Array.isArray(customizationSections.customization_options) &&
+          customizationSections.customization_options.length > 0 && (
+            <section
+              className="padM customizationOptions"
+              id="ExperienceServicesSec"
+            >
+              <Box
+                className="background-overlay"
+                sx={{
+                  // backgroundImage:
+                  //   'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")',
+                  backgroundImage: `${
+                    customizationSections?.customization_background_image
+                      ? customizationSections?.customization_background_image
+                      : 'url("https://www.1stopsigns.co.uk/wp-content/themes/onestop/img/layered-waves-row-0.svg")'
+                  }`,
+                  backgroundPosition: "center center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  opacity: 0.4,
+                  mixBlendMode: "overlay",
+                  transition:
+                    "background 0.3s, border-radius 0.3s, opacity 0.3s",
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  top: 0,
+                  left: 0,
+                  zIndex: 111,
+                }}
+              />
 
-            <Box className="container">
-              <Box className="MainHead">
-                <Typography variant="h2">
-                  {customizationSections?.customization_heading}
+              <Box className="container">
+                <Box className="MainHead">
+                  <Typography variant="h2">
+                    {customizationSections?.customization_heading}
+                  </Typography>
+                </Box>
+                <Typography>
+                  {customizationSections?.customization_content}
                 </Typography>
+                <List className="ListWrp">
+                  {customizationSections?.customization_options?.map(
+                    (text, index) => (
+                      <ListItem key={index} disableGutters>
+                        <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
+                          <CheckCircleIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={text?.customization_option} />
+                      </ListItem>
+                    )
+                  )}
+                </List>
               </Box>
-              <Typography>
-                {customizationSections?.customization_content}
-              </Typography>
-              <List className="ListWrp">
-                {customizationSections?.customization_options?.map(
-                  (text, index) => (
-                    <ListItem key={index} disableGutters>
-                      <ListItemIcon sx={{ minWidth: "30px", color: "green" }}>
-                        <CheckCircleIcon />
-                      </ListItemIcon>
-                      <ListItemText primary={text?.customization_option} />
-                    </ListItem>
-                  )
-                )}
-              </List>
-            </Box>
-          </section>
-        )}
+            </section>
+          )}
 
         {/* <Box className="bg1 mb-0 padM" id="suBpageWrp">
           <Box className="container">
@@ -528,6 +503,28 @@ const page = ({ params }) => {
           </>
         )}
       </Box>
+      {!blogDetail?.description_title && !blogDetail?.description && (
+        <Box
+          component="section"
+          className="sec_1 bg2 padM"
+          id="descriptionSection"
+        >
+          <Box className="container">
+            <Box className="MainHead" textAlign="center" mb={4}>
+              <Typography variant="h2">
+                {blogDetail?.description_title ?? ""}
+              </Typography>
+            </Box>
+            <Typography
+              variant="body1"
+              dangerouslySetInnerHTML={{
+                __html: blogDetail?.description,
+              }}
+            />
+          </Box>
+        </Box>
+      )}
+
       {faqs?.length > 0 && <ServiceFaq faqs={faqs} />}
 
       {testimonialData?.lists?.length > 0 && (

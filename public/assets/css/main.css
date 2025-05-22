@@ -2310,6 +2310,30 @@ p {
 .pb-0{
   padding-bottom: 0!important;
 }
+#descriptionSection  ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 10px 0
+}
+
+#descriptionSection  ul li {
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+#descriptionSection  ul li:before {
+    content: "";
+    font-family: Font Awesome\ 6 Free;
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: green;
+    font-size: 18px;
+    line-height: 1.4
+}
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover > .submenu {
     opacity: 1;

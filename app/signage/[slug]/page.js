@@ -21,6 +21,7 @@ const page = ({ params }) => {
   const [whyChooseUs, setWhyChooseUs] = useState(null);
   const [galleries, setGalleries] = useState(null);
   const [ourFeatures, setOurFeatures] = useState(null);
+  const [testimonialData, setTestimonialData] = useState(null);
 
   useEffect(() => {
     if (!slug) return;
@@ -35,6 +36,7 @@ const page = ({ params }) => {
           setWhyChooseUs(response?.whychooseus);
           setGalleries(response?.galleries);
           setOurFeatures(response?.ourFeatures);
+          setTestimonialData(response?.testimonials);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -52,7 +54,7 @@ const page = ({ params }) => {
       <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
       <IdealShop />
-      <Testimonials />
+      <Testimonials testimonialData={testimonialData} />
       <FaqSection faqs={faqs} loading={loading} />
       <CallToAction />
     </>

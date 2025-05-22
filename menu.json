@@ -21,13 +21,98 @@
               "type": "page"
             },
             {
-              "name": "Product Name",
-              "link": "#",
+              "name": "Business Signage",
+              "link": "/signage/business-signage",
               "type": "page"
             },
             {
-              "name": "Product Name1",
-              "link": "#",
+              "name": "Van Signage",
+              "link": "/signage/van-signage-london",
+              "type": "page"
+            },
+            {
+              "name": "PVC Banners",
+              "link": "/signage/pvc-banners",
+              "type": "page"
+            },
+            {
+              "name": "Roll Up Banners",
+              "link": "/signage/roll-up-banners",
+              "type": "page"
+            },
+            {
+              "name": "Foamex Signs Boards",
+              "link": "/signage/foamex-boards",
+              "type": "page"
+            },
+            {
+              "name": "Correx Boards",
+              "link": "/signage/correx-boards",
+              "type": "page"
+            },
+            {
+              "name": "Mesh Banners",
+              "link": "/signage/mesh-banners",
+              "type": "page"
+            },
+            {
+              "name": "Paper Posters",
+              "link": "/signage/paper-posters",
+              "type": "page"
+            },
+            {
+              "name": "Window Graphics",
+              "link": "/signage/window-graphics",
+              "type": "page"
+            },
+            {
+              "name": "Waterbase A Boards",
+              "link": "/signage/waterbase-a-boards",
+              "type": "page"
+            },
+            {
+              "name": "Feather Flags",
+              "link": "/signage/feather-flags",
+              "type": "page"
+            },
+            {
+              "name": "One Way Vision Posters",
+              "link": "/signage/one-way-vision-posters",
+              "type": "page"
+            },
+            {
+              "name": "Backlit Light Boxes",
+              "link": "/signage/backlit-light-boxes",
+              "type": "page"
+            },
+            {
+              "name": "Canvas Printing",
+              "link": "/signage/canvas-printing",
+              "type": "page"
+            },
+            {
+              "name": "Lightbox Signs",
+              "link": "/signage/lightbox-signs",
+              "type": "page"
+            },
+            {
+              "name": "Display & POS",
+              "link": "/signage/display-pos",
+              "type": "page"
+            },
+            {
+              "name": "Estate Agent Boards",
+              "link": "/signage/estate-agent-boards",
+              "type": "page"
+            },
+            {
+              "name": "Hoarding Printing",
+              "link": "/signage/hoarding-printing",
+              "type": "page"
+            },
+            {
+              "name": "Vinyl Print & Cut",
+              "link": "/signage/vinyl-print-cut",
               "type": "page"
             }
           ]
@@ -38,23 +123,38 @@
           "type": "page",
           "children": [
             {
-              "name": "Shop Front Signs",
-              "link": "/shop-front-signs",
+              "name": "Calendar Printing",
+              "link": "/printing/calendar-printing",
               "type": "page"
             },
             {
-              "name": "Product Name",
-              "link": "#",
+              "name": "Pen Printing",
+              "link": "/printing/pen-printing",
               "type": "page"
             },
             {
-              "name": "Product Name",
-              "link": "#",
+              "name": "Keyrings",
+              "link": "/printing/keyrings",
               "type": "page"
             },
             {
-              "name": "Product Name",
-              "link": "#",
+              "name": "Mugs Printing",
+              "link": "/printing/mugs-printing",
+              "type": "page"
+            },
+            {
+              "name": "Badge Printing",
+              "link": "/printing/badge-printing",
+              "type": "page"
+            },
+            {
+              "name": "Mouse Mats",
+              "link": "/printing/mouse-mats",
+              "type": "page"
+            },
+            {
+              "name": "Coasters",
+              "link": "/printing/coasters",
               "type": "page"
             }
           ]
@@ -65,50 +165,18 @@
           "type": "page",
           "children": [
             {
-              "name": "Shop Front Signs",
-              "link": "/shop-front-signs",
+              "name": "Upload Artwork",
+              "link": "/upload-artwork",
               "type": "page"
             },
             {
-              "name": "Product Name",
-              "link": "#",
+              "name": "Wallpaper",
+              "link": "/wallpaper",
               "type": "page"
             },
             {
-              "name": "Product Name1",
-              "link": "#",
-              "type": "page"
-            },
-            {
-              "name": "Product Name2",
-              "link": "#",
-              "type": "page"
-            }
-          ]
-        },
-        {
-          "name": "Beauty",
-          "link": "/beauty",
-          "type": "page",
-          "children": [
-            {
-              "name": "Shop Front Signs",
-              "link": "/shop-front-signs",
-              "type": "page"
-            },
-            {
-              "name": "Product Name",
-              "link": "#",
-              "type": "page"
-            },
-            {
-              "name": "Product Name1",
-              "link": "#",
-              "type": "page"
-            },
-            {
-              "name": "Product Name2",
-              "link": "#",
+              "name": "Colour Matching",
+              "link": "/colour-matching",
               "type": "page"
             }
           ]
@@ -117,7 +185,7 @@
     },
     {
       "name": "Services",
-      "link": "/services",
+      "link": "/printing-services-london",
       "type": "page",
       "children": [
         {

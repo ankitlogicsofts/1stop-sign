@@ -33,21 +33,21 @@ const Navbar = ({ setIsOpen }) => {
     setIsOpen(false); // Close the menu
   };
 
-  const [menuItems, setMenuItems] = useState([]);
-  useEffect(() => {
-    const fetchMenu = async () => {
-      try {
-        const response = await GetMenus();
-        setMenuItems(response.header);
-      } catch (error) {
-        console.error("Error fetching menu:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // const [menuItems, setMenuItems] = useState([]);
+  // useEffect(() => {
+  //   const fetchMenu = async () => {
+  //     try {
+  //       const response = await GetMenus();
+  //       setMenuItems(response.header);
+  //     } catch (error) {
+  //       console.error("Error fetching menu:", error);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
 
-    fetchMenu();
-  }, []);
+  //   fetchMenu();
+  // }, []);
 
   const items = menuItems.menuitems || [];
   // console.log(items);
@@ -85,7 +85,7 @@ const Navbar = ({ setIsOpen }) => {
                     className="menu-link"
                     onClick={handleLinkClick}
                   >
-                    {menu.name}
+                    {menu.name === "products" ? "#" : menu.name}
                   </Link>
                   {menu.children && menu.children.length > 0 && (
                     <ExpandMoreIcon
@@ -102,8 +102,13 @@ const Navbar = ({ setIsOpen }) => {
                           onMouseEnter={() => setOpenSubMenu(item.name)}
                           onMouseLeave={() => setOpenSubMenu(null)}
                         >
+                          {}
                           <Link
-                            href={item.link || "#"}
+                            href={
+                              item.link !== "/products/signage-displays"
+                                ? "#"
+                                : "signage"
+                            }
                             className="submenu-link"
                             onClick={handleLinkClick}
                           >
