@@ -161,7 +161,7 @@ const Header = () => {
                         width={160}
                         height={64}
                         className="logo"
-                        animation="wave"
+                        // animation="wave"
                       />
                     ) : (
                       <MotionBox {...logoanimationProps}>

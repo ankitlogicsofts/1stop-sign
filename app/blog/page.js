@@ -119,9 +119,25 @@ const BlogSection = () => {
                   />
                   <Typography className="date">{blog.date}</Typography>
                   <Box className="boxBcontent">
-                    <Typography variant="h5" component="h3">
+                    {/* <Typography variant="h5" component="h3">
                       {blog.title}
+                    </Typography> */}
+                    <Typography
+                      variant="h3"
+                      component="h3"
+                      sx={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        marginBottom: "5px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {getPlainPreview(blog?.content)}
                     </Typography>
+
                     <Typography variant="body1">
                       {getPlainPreview(blog?.content, 125)}
                     </Typography>
