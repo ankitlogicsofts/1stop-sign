@@ -228,7 +228,7 @@ const ContactPage = () => {
                               fullWidth
                               name="message"
                               multiline
-                              rows={9}
+                              rows={3}
                               label="Your Message"
                               variant="outlined"
                               placeholder="Please provide details about your requirements..."

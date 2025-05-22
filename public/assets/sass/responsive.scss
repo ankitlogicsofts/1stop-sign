@@ -204,6 +204,9 @@
   .twoColumn {
     column-count: 2;
   }
+  #client_slider .client_content {
+    height: 220px;
+  }
 }
 @media (max-width: 1024px) {
   .services .gridHead {

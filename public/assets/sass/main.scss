@@ -953,3 +953,42 @@ body {
     background: #003366;
   }
 }
+section.sec_1.services.MuiBox-root.css-0 {
+  .MainHead {
+    max-width: fit-content;
+  }
+}
+#blogDetail {
+  img {
+    height: auto;
+    max-width: 1000px;
+    display: block;
+  }
+
+  .MuiTypography-body ul {
+    padding-left: 0px;
+    list-style: none;
+    margin: 10px 0;
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      line-height: 1.5;
+
+      &::before {
+        content: "\f058";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #008000;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+.Mui-error {
+  font-size: 14px !important;
+}

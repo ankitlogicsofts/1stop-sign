@@ -1688,14 +1688,17 @@ div#trustSec .MuiGrid-container {
   clear: both;
 }
 #blogDetail {
-  padding: 3em 0;
-  clear: both;
+    padding: 3em 0;
+    clear: both;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 #blogDetail h1 {
   text-align: left;
   color: #003366;
   font-size: 2.2rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 #blogDetail h2 {
   font-size: 2rem;
@@ -1725,7 +1728,6 @@ div#trustSec .MuiGrid-container {
   max-width: 1200px;
 }
 #blogDetail img {
-  width: 100%;
   margin: 15px 0;
 }
 #blogDetail .blog {
