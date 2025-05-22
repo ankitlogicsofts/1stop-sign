@@ -119,7 +119,7 @@
         },
         {
           "name": "Promotional Printing",
-          "link": "promotional-printing",
+          "link": "#",
           "type": "page",
           "children": [
             {
@@ -161,7 +161,7 @@
         },
         {
           "name": "Artwork",
-          "link": "/artwork",
+          "link": "#",
           "type": "page",
           "children": [
             {
@@ -190,7 +190,7 @@
       "children": [
         {
           "name": "Exhibition Display",
-          "link": "/services/exhibition-display",
+          "link": "/signage/exhibition-display",
           "type": "page"
         },
         {
