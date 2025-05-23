@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Alert } from "@mui/material";
 import ContactInformation from "./ContactInformation";
+import { PostContact } from "@/lib/api/api";
 
 const ContactUs = () => {
   const [successMessage, setSuccessMessage] = useState("");

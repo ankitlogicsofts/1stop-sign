@@ -68,20 +68,22 @@ const SignsInLondon = ({ ourFeatures, loading }) => {
             }}
           />
         </Box>
-        <Slider {...settings} className="GridWrap">
-          {ourFeatures?.features?.map((item, i) => (
-            <Box key={i} className="item">
-              <Box className="GridBox">
-                <Box className="img">
-                  <a href="#">
-                    <img src={item.image} alt={item.title} />
-                    <h4>{item.title}</h4>
-                  </a>
+        {ourFeatures?.features?.length > 0 && (
+          <Slider {...settings} className="GridWrap">
+            {ourFeatures.features.map((item, i) => (
+              <Box key={i} className="item">
+                <Box className="GridBox">
+                  <Box className="img">
+                    <a href="#">
+                      <img src={item.image} alt={item.title} />
+                      <h4>{item.title}</h4>
+                    </a>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        )}
       </Box>
     </section>
   );

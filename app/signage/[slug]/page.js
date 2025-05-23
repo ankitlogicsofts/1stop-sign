@@ -23,6 +23,8 @@ const page = ({ params }) => {
   const [ourFeatures, setOurFeatures] = useState(null);
   const [testimonialData, setTestimonialData] = useState(null);
   const [heroSection, setHeroSection] = useState(null);
+  const [sections, setSections] = useState(null);
+  const [cta, setCta] = useState(null);
 
   useEffect(() => {
     if (!slug) return;
@@ -39,6 +41,8 @@ const page = ({ params }) => {
           setGalleries(response?.galleries);
           setOurFeatures(response?.ourFeatures);
           setTestimonialData(response?.testimonials);
+          setSections(response?.sections);
+          setCta(response?.cta);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -54,11 +58,13 @@ const page = ({ params }) => {
       <HeroSection heroSection={heroSection} />
       <TrustValueProps />
       <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
-      <WhyChooseUs whyChooseUs={whyChooseUs} />
-      <IdealShop />
-      <Testimonials testimonialData={testimonialData} />
-      <FaqSection faqs={faqs} loading={loading} />
-      <CallToAction />
+      {whyChooseUs?.reasons?.length > 0 && (
+        <WhyChooseUs whyChooseUs={whyChooseUs} />
+      )}
+      <IdealShop sections={sections} />
+      {testimonialData && <Testimonials testimonialData={testimonialData} />}
+      {faqs?.length > 0 && <FaqSection faqs={faqs} loading={loading} />}
+      {cta?.length > 0 && <CallToAction cta={cta} />}
     </>
   );
 };

@@ -62,7 +62,8 @@ const WhyChooseUs = ({ whyChooseUs }) => {
                   <ul>
                     {whyChooseUs.reasons.map((item, index) => (
                       <li key={index}>
-                        <strong>{item.title}</strong> – {item.description}
+                        <strong>{item.title}</strong>{item.description ? ` – ${item.description}` : ''}
+
                       </li>
                     ))}
                   </ul>
