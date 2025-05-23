@@ -31,6 +31,7 @@ const Signage = () => {
   const [ourFeatures, setOurFeatures] = useState(null);
   const [loading, setLoading] = useState(true);
   const [heroSection, setHeroSection] = useState(null);
+  const [cta, setCta] = useState(null);
 
   useEffect(() => {
     if (!page) return;
@@ -46,6 +47,7 @@ const Signage = () => {
           setWhyChooseUs(response?.whychooseus);
           setGalleries(response?.galleries);
           setOurFeatures(response?.ourFeatures);
+          setCta(response?.cta);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -68,8 +70,8 @@ const Signage = () => {
       <PerfectSign data={data} loading={loading} />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
       <RecentWork />
-      <FaqSection faqs={faqs} loading={loading} />
-      <CallToAction />
+      {faqs?.length > 0 && <FaqSection faqs={faqs} loading={loading} />}
+      {cta?.length > 0 && <CallToAction cta={cta} />}
     </>
   );
 };
