@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { HomePage } from "@/lib/api/api";
 
-const HeroBanner = () => {
+const HeroBanner = ({heroSection}) => {
   const settings = {
     dots: true,
     arrows: false,
@@ -29,7 +29,7 @@ const HeroBanner = () => {
     ],
   };
 
-  const [heroSection, setHeroSection] = useState(null);
+  // const [heroSection, setHeroSection] = useState(null);
   const [trustExperience, setTrustExperience] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,7 +38,7 @@ const HeroBanner = () => {
       try {
         const response = await HomePage();
         if (response) {
-          setHeroSection(response?.herosection);
+          // setHeroSection(response?.herosection);
           setTrustExperience(response?.trustExperience);
         }
       } catch (error) {

@@ -34,12 +34,14 @@ const page = ({ params }) => {
   const [testimonialData, setTestimonialData] = useState(null);
   const [galleries, setGalleries] = useState(null);
   const [faqs, setFaqs] = useState(null);
+  const [heroSection, setHeroSection] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
         const response = await getServiceBySlug(slug);
         if (response) {
+          setHeroSection(response?.herosection);
           setBlogDetail(response);
           setSections1(response?.section1);
           setSections2(response?.section2);
@@ -74,7 +76,7 @@ const page = ({ params }) => {
   ];
   return (
     <>
-      <HeroSection />
+      <HeroSection heroSection={heroSection} />
       <TrustValueProps />
       <Box className="serviceSupPage">
         <Box className="bg2 mb-0 padM" id="suBpageWrp">

@@ -22,6 +22,7 @@ const page = ({ params }) => {
   const [galleries, setGalleries] = useState(null);
   const [ourFeatures, setOurFeatures] = useState(null);
   const [testimonialData, setTestimonialData] = useState(null);
+  const [heroSection, setHeroSection] = useState(null);
 
   useEffect(() => {
     if (!slug) return;
@@ -31,6 +32,7 @@ const page = ({ params }) => {
         const response = await GetProductData(slug);
         if (response) {
           setData(response);
+          setHeroSection(response?.herosection);
           setFaqs(response?.faqs);
           setProductTypes(response?.productTypes);
           setWhyChooseUs(response?.whychooseus);
@@ -49,7 +51,7 @@ const page = ({ params }) => {
   }, [slug]);
   return (
     <>
-      <HeroSection />
+      <HeroSection heroSection={heroSection} />
       <TrustValueProps />
       <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
