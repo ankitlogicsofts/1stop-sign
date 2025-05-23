@@ -770,7 +770,7 @@ section.sec_1.services {
   font-weight: 600;
 }
 .gridCol.left {
-  width: 60%;
+  width: 90%;
 }
 .gridCol.right {
   width: 40%;
@@ -1513,6 +1513,7 @@ div#trustSec .MuiGrid-container {
 .custom-slider .slick-track {
   display: flex;
   column-gap: 20px;
+  margin: 0;
 }
 .slick-prev,
 .slick-next {
@@ -2334,6 +2335,7 @@ p {
     font-size: 18px;
     line-height: 1.4
 }
+
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover > .submenu {
     opacity: 1;

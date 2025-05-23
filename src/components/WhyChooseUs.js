@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Box, Grid, Typography, Skeleton } from "@mui/material";
+import Image from "next/image";
 
 const WhyChooseUs = ({ whyChooseUs }) => {
   const loading = !whyChooseUs;
@@ -49,9 +50,15 @@ const WhyChooseUs = ({ whyChooseUs }) => {
                 </>
               ) : (
                 <>
-                  <Typography variant="body1">
+                  <Typography
+                    variant="body1"
+                    dangerouslySetInnerHTML={{
+                      __html: whyChooseUs?.sub_heading,
+                    }}
+                  />
+                  {/* <Typography variant="body1">
                     {whyChooseUs.sub_heading}
-                  </Typography>
+                  </Typography> */}
                   <ul>
                     {whyChooseUs.reasons.map((item, index) => (
                       <li key={index}>
@@ -74,23 +81,30 @@ const WhyChooseUs = ({ whyChooseUs }) => {
                   sx={{ borderRadius: "12px" }}
                 />
               ) : (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ maxWidth: "100%", borderRadius: "12px" }}
-                  className="ugb-video-preview"
-                >
-                  <source
-                    src={
-                      whyChooseUs?.vedio_link ||
-                      "/assets/images/videoplayback.mp4"
-                    }
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                <Image
+                  src={whyChooseUs?.vedio_link || ""}
+                  alt={whyChooseUs?.main_heading || "Image"}
+                  width={600}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+                // <video
+                //   autoPlay
+                //   loop
+                //   muted
+                //   playsInline
+                //   style={{ maxWidth: "100%", borderRadius: "12px" }}
+                //   className="ugb-video-preview"
+                // >
+                //   <source
+                //     src={
+                //       whyChooseUs?.vedio_link ||
+                //       "/assets/images/videoplayback.mp4"
+                //     }
+                //     type="video/mp4"
+                //   />
+                //   Your browser does not support the video tag.
+                // </video>
               )}
             </Box>
           </Grid>
