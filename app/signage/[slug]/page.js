@@ -10,6 +10,7 @@ import WhyChooseUs from "@/src/components/WhyChooseUs";
 import { notFound } from "next/navigation";
 import { GetProductData } from "@/lib/api/api";
 import TrustValueProps from "@/src/components/TrustValueProps";
+import SignageExperts from "@/src/components/signageComponents/SignageExperts";
 
 const page = ({ params }) => {
   const { slug } = use(params);
@@ -57,7 +58,12 @@ const page = ({ params }) => {
     <>
       <HeroSection heroSection={heroSection} />
       <TrustValueProps />
-      <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
+      {data?.product_title && data?.product_content && (
+        <SignageExperts data={data} loading={loading} />
+      )}
+      {ourFeatures?.features?.length > 0 && (
+        <SignsInLondon ourFeatures={ourFeatures} loading={loading} />
+      )}
       {whyChooseUs?.reasons?.length > 0 && (
         <WhyChooseUs whyChooseUs={whyChooseUs} />
       )}
