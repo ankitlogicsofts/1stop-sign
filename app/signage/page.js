@@ -30,6 +30,7 @@ const Signage = () => {
   const [galleries, setGalleries] = useState(null);
   const [ourFeatures, setOurFeatures] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [heroSection, setHeroSection] = useState(null);
 
   useEffect(() => {
     if (!page) return;
@@ -39,6 +40,7 @@ const Signage = () => {
         const response = await GetProductData(page);
         if (response) {
           setData(response);
+          setHeroSection(response?.herosection);
           setFaqs(response?.faqs);
           setProductTypes(response?.productTypes);
           setWhyChooseUs(response?.whychooseus);
@@ -57,7 +59,7 @@ const Signage = () => {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection heroSection={heroSection} />
       <TrustValueProps />
       <SignageExperts data={data} loading={loading} />
       <OurGallery galleries={galleries} />

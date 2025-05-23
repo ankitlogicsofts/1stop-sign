@@ -4,10 +4,10 @@ import { Box, Grid, Typography } from "@mui/material";
 import HeroBanner from "./HeroBanner";
 import Link from "next/link";
 
-const HeroSection = () => {
+const HeroSection = ({heroSection}) => {
   return (
     <>
-      <HeroBanner />
+      <HeroBanner heroSection={heroSection}/>
     </>
   );
 };
